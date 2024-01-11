@@ -43,7 +43,7 @@
 
 #### 1. Language of the Computer:-
 - Programming Fundamentals: data type & variable, operators, condition, loops, function, array, string, pointer, memory allocation, structure & union.
-- Object Oriented & Functional Programming.
+- Object Oriented Programming.
 - Trending Languages: C, Java, Python...
 
 <br/>
