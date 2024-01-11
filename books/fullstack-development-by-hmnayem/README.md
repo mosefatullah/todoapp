@@ -1,6 +1,6 @@
 ### Full Stack Development - By HM Nayem
 
-#### Summary of the lessons:-
+#### Introduction of the lessons:-
 - Language of Computer
   - Programming Languages like python, c, java etc.
 
@@ -33,3 +33,30 @@
 
 - Engineering of the Literature
   - Software Development with Engineering
+
+
+#### Key Points of the Lessons
+
+##### Backbone of the Literature:-
+
+###### Nodejs - Topic
+
+- Nodejs Architecture
+- Nodejs Built-in Modules
+- Express Framework
+- Route & Middleware
+- Template Engines
+- Session & Cookies
+- Authentication Techniques
+- File Upload, Public Directory
+- Error Handling & Debugging
+- REST API Specifications
+- MongoDB with Mongoose
+- MySQL with Sequelize
+- Email with Nodemailer
+- Twilio, Sendgrid and Pusher
+- Socket.io
+- GraphQL, Prisma & Apollo
+- Cloudinary, AWS S3 & Vimeo
+- Test Driven Development
+- NodeJS Design Patterns
