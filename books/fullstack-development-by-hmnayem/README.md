@@ -41,6 +41,52 @@
 
 ### Key Points of the Lessons
 
+#### 6. Beauty of the Literature:-
+##### Reactjs - Topic
+
+- Component Theory
+- Component Tree & Props
+- Component State & API
+- JSX (Javascript Extension)
+- Conditional Rendering
+- Rendering Lists & Keys
+- Event Handling
+- Input Elements
+- Two Way Data Binding
+- React Froms
+- Lifecycle Methods
+- Design Patterns
+- Context API
+- React Hooks
+- Refs & Forward Refs
+- Error Boundaries
+- Performance Optimization
+- Suspense
+- Testing
+
+##### Reactjs - Tools
+- Material UI (Component Library)
+- Ant Design (Component Library)
+- React Strap (Component Library)
+- React Router (Routing)
+- Reach Router (Routing)
+- Axios (AJAX)
+- Redux (State Management)
+- React Redux (Redux Bindings)
+- MobX (State Management)
+- Easy Peasy (State Management)
+- Redux Form (Form Handling)
+- Formik (Form Handling)
+- React Hook Form (Form Handling)
+- Use React (Hooks)
+- React DND (Drag & Drop)
+- React Spring (Animation)
+- React Transition Group (Animation)
+- React Helmet (SEO)
+- React Developer Tool (Extension)
+- Redux Developer Tool (Extension)
+
+
 #### 7. Backbone of the Literature:-
 
 ##### Nodejs - Topic
