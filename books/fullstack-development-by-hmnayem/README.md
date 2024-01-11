@@ -2,7 +2,7 @@
 
 ### Introduction of the lessons:-
 1. Language of Computer
-  - Programming Languages like python, c, java etc.
+  * Programming Languages like python, c, java etc.
 
 2. Grammar of the Language
   - Data Structure, Algorithm and Discrete Mathematics
@@ -34,6 +34,9 @@
 11. Engineering of the Literature
   - Software Development with Engineering
 
+
+<br/>
+<br/>
 
 ### Key Points of the Lessons
 
