@@ -1,37 +1,37 @@
 ## Full Stack Development - By HM Nayem
 
 ### Introduction of the lessons:-
-- 1. Language of Computer
+1. Language of Computer
   - Programming Languages like python, c, java etc.
 
-- 2. Grammar of the Language
+2. Grammar of the Language
   - Data Structure, Algorithm and Discrete Mathematics
 
-- 3. Literature of the Language
+3. Literature of the Language
   - Necessary Concepts like frontend, backend etc.
 
-- 4. Writing Literature
+4. Writing Literature
   - Frontend Development
 
-- 5. Language of the Literature
+5. Language of the Literature
   - JavaScript Language
 
-- 6. Beauty of the Literature
+6. Beauty of the Literature
   - Reactjs Development
 
-- 7. Backbone of the Literature
+7. Backbone of the Literature
   - Backend Development
 
-- 8. Dictionary of the Literature
+8. Dictionary of the Literature
   - Databases like postgreSql, mongodb etc.
 
-- 9. Structure of the Literature
+9. Structure of the Literature
   - System Design
 
-- 10. Publishing the Literature
+10. Publishing the Literature
   - Deployment, DevOps
 
-- 11. Engineering of the Literature
+11. Engineering of the Literature
   - Software Development with Engineering
 
 
