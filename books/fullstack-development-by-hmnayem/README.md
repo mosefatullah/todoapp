@@ -73,7 +73,7 @@
 
 <br/>
 
-#### 7. Language of the Literature:-
+#### 5. Language of the Literature:-
 ##### Javascript - Topic
 - Programming Fundamentals
 - Data Types and Type Coercion
