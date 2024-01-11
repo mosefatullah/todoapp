@@ -2,37 +2,37 @@
 
 ### Introduction of the lessons:-
 
-1. Language of Computer
+- Language of Computer
   - Programming Languages like python, c, java etc.
 
-2. Grammar of the Language
+- Grammar of the Language
   - Data Structure, Algorithm and Discrete Mathematics
 
-3. Literature of the Language
+- Literature of the Language
   - Necessary Concepts like frontend, backend etc.
 
-4. Writing Literature
+- Writing Literature
   - Frontend Development
 
-5. Language of the Literature
+- Language of the Literature
   - JavaScript Language
 
-6. Beauty of the Literature
+- Beauty of the Literature
   - Reactjs Development
 
-7. Backbone of the Literature
+- Backbone of the Literature
   - Backend Development
 
-8. Dictionary of the Literature
+- Dictionary of the Literature
   - Databases like postgreSql, mongodb etc.
 
-9. Structure of the Literature
+- Structure of the Literature
   - System Design
 
-10. Publishing the Literature
+- Publishing the Literature
   - Deployment, DevOps
 
-11. Engineering of the Literature
+- Engineering of the Literature
   - Software Development with Engineering
 
 
