@@ -86,6 +86,7 @@
 - React Developer Tool (Extension)
 - Redux Developer Tool (Extension)
 
+<br/>
 
 #### 7. Backbone of the Literature:-
 
