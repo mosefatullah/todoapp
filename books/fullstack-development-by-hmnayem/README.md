@@ -2,7 +2,7 @@
 
 ### Introduction of the lessons:-
 
-- Language of Computer
+- Language of the Computer
   - Programming Languages like python, c, java etc.
 
 - Grammar of the Language
@@ -40,6 +40,12 @@
 <br/>
 
 ### Key Points of the Lessons
+
+#### 1. Language of the Computer:-
+- Programming Fundamentals: data type & variable, operators, condition, loops, function, array, string, pointer, memory allocation, structure & union.
+- Trending Languages: C, Java, Python
+
+<br/>
 
 #### 7. Language of the Literature:-
 ##### Javascript - Topic
