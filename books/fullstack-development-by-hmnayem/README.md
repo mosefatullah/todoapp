@@ -46,6 +46,31 @@
 - Object Oriented Programming.
 - Trending Languages: C, Java, Python...
 
+##### C - Topic
+- Environment Setup
+- Basic Syntaxes
+- Conditions
+- Functions
+- Array & String
+- Pointers
+- Structures
+- File Handling
+
+##### OOP - Topic
+- Encapsulation
+- Abstraction
+- Inheritance
+- Polymorphism
+
+##### Java - Topic
+- Environment Setup
+- Basic Syntax
+- OOP
+- Collection Framework
+- Concurrency
+- Synchronization
+- Exceptions
+
 <br/>
 
 #### 7. Language of the Literature:-
