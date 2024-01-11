@@ -41,6 +41,32 @@
 
 ### Key Points of the Lessons
 
+#### 7. Language of the Literature:-
+##### Javascript - Topic
+- Programming Fundamentals
+- Data Types and Type Coercion
+- Condition and Loops
+- Function
+- Arrays and Objects
+- Functional Programming
+- Global and Lexical Scope
+- Execution Context
+- Variable Object and Hoisting
+- Scope Chain and Closure
+- Object Oriented Programming
+- Object Creation Patterns
+- Prototype and Inheritance
+- Global Object and This Keyword
+- Bind, Call and Apply
+- Object and Object References
+- Asynchronous Programming
+- Error Handling
+- DOM Manipulation
+- ECMAScript 6
+- Javascript Engine
+
+<br/>
+
 #### 6. Beauty of the Literature:-
 ##### Reactjs - Topic
 
