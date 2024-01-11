@@ -1,29 +1,41 @@
-### Javascript
+<h3 align="center">
+   <img src="https://cdn.iconscout.com/icon/free/png-512/javascript-2752148-2284965.png" alt="JavaScript" width="30" height="30"/>
+   <br/>
+   <strong>Javascript</strong>
+</h3>
 
 #### [] Introduction
-* JavaScript is a lightweight, interpreted, object-oriented programming language with first-class functions, and is best known as the scripting language for Web pages, but it's used in many non-browser environments as well.
+
+- JavaScript is a lightweight, interpreted, object-oriented programming language with first-class functions, and is best known as the scripting language for Web pages, but it's used in many non-browser environments as well.
 
 #### [] Learning Resources
-* [Sololearn - JavaScript](https://www.sololearn.com/en/learn/courses/le-javascript) `Course`
-* [Stack Learner - Javascript All You Need to Know](https://www.youtube.com/playlist?list=PL_XxuZqN0xVAu_dWUVFbscqZdTzE8t6Z1) `Tutorial`
-* [Sololearn - JavaScript Intermediate](https://www.sololearn.com/en/learn/courses/javascript-intermediate) `Course`
+
+- [Sololearn - JavaScript](https://www.sololearn.com/en/learn/courses/le-javascript) `Course`
+- [Stack Learner - Javascript All You Need to Know](https://www.youtube.com/playlist?list=PL_XxuZqN0xVAu_dWUVFbscqZdTzE8t6Z1) `Tutorial`
+- [Sololearn - JavaScript Intermediate](https://www.sololearn.com/en/learn/courses/javascript-intermediate) `Course`
 
 #### [] Certifications
-* [Sololearn - JavaScript](https://www.sololearn.com/certificates/CT-ANUVMBCE) `Course` `Certificate`
-* [Sololearn - JavaScript Intermediate](https://www.sololearn.com/certificates/CC-XVJTPR9B) `Course` `Certificate`
+
+- [Sololearn - JavaScript](https://www.sololearn.com/certificates/CT-ANUVMBCE) `Course` `Certificate`
+- [Sololearn - JavaScript Intermediate](https://www.sololearn.com/certificates/CC-XVJTPR9B) `Course` `Certificate`
 
 #### [] Timelines
-* `2019` Started *JavaScript* course on Sololearn
-* `2019-12-01` Completed *JavaScript* course on Sololearn
-* `2023` Completed *Javascript All You Need to Know* tutorial on Stack Learner
-* `2023-07-24` Started *JavaScript Intermediate* course on Sololearn
 
-#### [] Covered Topics
+- `2019` Started _JavaScript_ course on Sololearn
+- `2019-12-01` Completed _JavaScript_ course on Sololearn
+- `2023` Completed _Javascript All You Need to Know_ tutorial on Stack Learner
+- `2023-07-24` Started _JavaScript Intermediate_ course on Sololearn
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h3 align="center">Notes</h3>
 
 ##### Stack Learner - Javascript All You Need to Know
 
-**BASIC**
-----------------------------------------------------------------------------------------------------
+## **BASIC**
 
 **Core 1 : CONDITIONS AND LOOPS :-**
 
@@ -39,7 +51,7 @@
 - **JS Maths** [E, PI, abs, floor, ceil, max, min, pow, sqrt, random], **Date** [toDateString, toTimeString, toLocalString, get..]
 - **JS Logics** [if, else, elseif, switch conditions], **Using Logical Operator**
 - **JS Ternary Operator** [logic/condition ? 'true' : 'false']
-- **JS AND OR Shorthand** [var a = b || 'no value'][var a = true; a && console.log('truely');
+- **JS AND OR Shorthand** [var a = b || 'no value']var a = true; a && console.log('truely');
 - **JS Loops and Use** [for, while, do], Nested Loops, Break, Continue, Infinity]
 
 **Core 2 : STRING :-**
@@ -76,7 +88,7 @@
 
 **ADVANCED**
 
-----------------------------------------------------------------------------------------------------
+---
 
 **Core 6 : FUNCTIONAL PROGRAMMING :-**
 
@@ -137,10 +149,10 @@
 [] Transform a function with multiple arguments into a sequence of nesting functions
 
 ```jsx
-function print(a) { 
-  return function (b) { 
-      return a + b 
-  } 
+function print(a) {
+ return function (b) {
+  return a + b;
+ };
 }
 print(1)(2); // 3
 ```
@@ -151,9 +163,9 @@ print(1)(2); // 3
 
 ```jsx
 function print(n) {
-  if (n === 0) return print(n - 1)
+ if (n === 0) return print(n - 1);
 }
-print(10)
+print(10);
 ```
 
 - **Function Composition :**
@@ -161,7 +173,7 @@ print(10)
 [] First function's input gives second function's output
 
 ```jsx
-input( output(10) )
+input(output(10));
 ```
 
 **Core 7 : SCOPE AND CLOSURE :**
@@ -192,9 +204,9 @@ input( output(10) )
 
 - **Creation & Execution Phase :**
 
-[] Creation : Identify all variables and functions, store variables 
+[] Creation : Identify all variables and functions, store variables
 with undefined, store functions with reference and make relational scope
- chain
+chain
 
 [] Execution : Assign the values of undefined variables and this, executing everything line by line
 
@@ -206,7 +218,7 @@ with undefined, store functions with reference and make relational scope
 
 [] There is no difference between them about their output, but has difference about hoisting
 
-[] Expression means putting anonymous function in a variable, on the 
+[] Expression means putting anonymous function in a variable, on the
 otherside, declaration means direct function with function keyword
 
 - **Scope in JS :**
@@ -215,7 +227,7 @@ otherside, declaration means direct function with function keyword
 
 [] Nested scope [{ { {} } }], Lexical Scope [ Tokenize and dividing as token ]
 
-[] Scope chain : it is look like a tree, three types of scope - 
+[] Scope chain : it is look like a tree, three types of scope -
 global, function, block. A scope in a chain is relationship of all data
 
 [] If a scope don't find any data, it will go to it's parent
@@ -260,8 +272,8 @@ So, variables are accessible outside {} without function
 
 - **OOP Abstraction :**
 
-[] Ability for hiding unnecessary details [private] like 
-implementation or circuit machines (motherboard), which are not 
+[] Ability for hiding unnecessary details [private] like
+implementation or circuit machines (motherboard), which are not
 necessary for us, necessary is output
 
 - **OOP Encapsulation :**
@@ -270,138 +282,90 @@ necessary for us, necessary is output
 
 - **OOP Inheritance :**
 
-[] Ability for deriving a class from another class for skipping DRY, 
+[] Ability for deriving a class from another class for skipping DRY,
 making a base class [containing the qualities of others] which is common
- among other classes
+among other classes
 
 - **OOP Polymorphism :**
 
 [] Method overwrite, Multiform of anything like various objects from one class only
 
 - **Intro to OOP :**
-    
-    **@ Object Literal :-**
-    
-    #### Simple object creation, is a part of an class
-    
-    **@ This :-**
-    
-    #### Can be used in anywhere, it returns root object if it is inside 
-    an object, otherwise it returns 'window' object. Also it's value depends
-     on where it will be executed
-    
-    **@ Factory :-**
-    
-    #### Is a pattern, returning object in a (it) function
-    
-    #### It can be used directly without using 'new' keyword
-    
-    **@ Constructor :-**
-    
-    #### 2 things :   [Is a pattern, using all properties and methods with
-     this keyword in a (it) function, function name should be capital]
-    
-    [Is a property of every object, and also a reference, every object has it]
-    
-    #### Java/C++ Background, so it's easy for programmer
-    
-    **@ New :-**
-    
-    #### Converting a function to a object, type changing, it is used specially for constructor pattern
-    
-    **@ Bind, Call, Aply :-**
-    
-    #### Concept : Calling function with fixing execution context, 
-    refering 'this' keyword [like setting object for 'this' keyword in a 
-    function]
-    
-    #### Call : Instantly calling, (this, arguments...)
-    
-    #### Apply : Instantly calling, (this, [arguments...])
-    
-    #### Bind : No calling, but changing, (this, arguments...)
-    
-    **@ Pass by value / by reference :-**
-    
-    #### Pass by value [primitive data] in a function can't be changed outside the function really
-    
-    #### Pass by reference [object] in a function can be changed outside the function really
-    
-    #### Reference has unique id number where primitive data hasn't
-    
+  **@ Object Literal :-**
+  #### Simple object creation, is a part of an class
+  **@ This :-**
+  #### Can be used in anywhere, it returns root object if it is inside
+  an object, otherwise it returns 'window' object. Also it's value depends
+  on where it will be executed
+  **@ Factory :-**
+  #### Is a pattern, returning object in a (it) function
+  #### It can be used directly without using 'new' keyword
+  **@ Constructor :-**
+  #### 2 things : [Is a pattern, using all properties and methods with
+  this keyword in a (it) function, function name should be capital]
+  [Is a property of every object, and also a reference, every object has it]
+  #### Java/C++ Background, so it's easy for programmer
+  **@ New :-**
+  #### Converting a function to a object, type changing, it is used specially for constructor pattern
+  **@ Bind, Call, Aply :-**
+  #### Concept : Calling function with fixing execution context,
+  refering 'this' keyword [like setting object for 'this' keyword in a
+  function]
+  #### Call : Instantly calling, (this, arguments...)
+  #### Apply : Instantly calling, (this, [arguments...])
+  #### Bind : No calling, but changing, (this, arguments...)
+  **@ Pass by value / by reference :-**
+  #### Pass by value [primitive data] in a function can't be changed outside the function really
+  #### Pass by reference [object] in a function can be changed outside the function really
+  #### Reference has unique id number where primitive data hasn't
 - **Intro to Abstraction :**
-    
-    @ **Private property :-**
-    
-    #### By creating local variables in a constructor pattern
-    
-    @ **Getter/Setter :-**
-    
-    #### Getter : 
-    
-    1- Returning private property in a function, which is a public function
-    
-    ```jsx
-    this.getNewName = function() { 
-        return privateProperty 
-    }
-    ```
-    
-    2- By using :-
-    
-    ```jsx
-    Object.defineProperty(this, newName, { 
-       get: function() { return privateProperty } 
-    })
-    ```
-    
-    #### Setter :
-    
-    ```jsx
-    Object.defineProperty(this, newName, { 
-       set: function(value) { privateProperty = value } 
-    })
-    ```
-    
+  @ **Private property :-**
+  #### By creating local variables in a constructor pattern
+  @ **Getter/Setter :-**
+  #### Getter :
+  1- Returning private property in a function, which is a public function
+  ```jsx
+  this.getNewName = function () {
+   return privateProperty;
+  };
+  ```
+  2- By using :-
+  ```jsx
+  Object.defineProperty(this, newName, {
+   get: function () {
+    return privateProperty;
+   },
+  });
+  ```
+  #### Setter :
+  ```jsx
+  Object.defineProperty(this, newName, {
+   set: function (value) {
+    privateProperty = value;
+   },
+  });
+  ```
 - **Intro to Inheritance :**
-    
-    @ Two kinds of it are available : classical and prototypical
-    
-    @ JS class has prototypical inheritance
-    
-    @ **Prototype :-**
-    
-    #### By which objects inherit features from one another, where there is no code duplication
-    
-    #### It is a parent class, every object has a parent class that is `__proto__` [prototype]
-    
-    #### For getting any object's prototype, you shouldnt use `obj.__proto__`, but you can use `Object.getPrototypeOf(obj)`
-    
-    @ **Multi-level Inheritance :-**
-    
-    #### "__proto__" in "__proto__", Multiple prototype until comes Object prototype
-    
-    @ **Property Descriptor :-**
-    
-    #### Get : Object.getOwnPropertyDescriptor(obj, 'key')
-    
-    #### Set : Object.defineProperty(obj, 'key', { enumerable: false,... })
-    
-    @ **Constructor Prototype :-**
-    
-    #### Other way of finding prototype from a constructor function / pattern : FunctionName.prototype
-    
-    #### Setting prototype [for inheriting common property to all 'var
-     ... = new FunctionName()', though it will be hidden in __proto__, it 
-    can be used publicly as a property or method] : 
-    FunctionName.prototype.newProperty = 'value'
-    
-    @ **Prototype vs Instance Member :-**
-    
-    #### Instance = body or child, Prototype = out of body or parent
-    
-    #### Use prototype for avoiding duplicated instance, we can use anything from instance to prototype area [we = member]
-    
+  @ Two kinds of it are available : classical and prototypical
+  @ JS class has prototypical inheritance
+  @ **Prototype :-**
+  #### By which objects inherit features from one another, where there is no code duplication
+  #### It is a parent class, every object has a parent class that is `__proto__` [prototype]
+  #### For getting any object's prototype, you shouldnt use `obj.__proto__`, but you can use `Object.getPrototypeOf(obj)`
+  @ **Multi-level Inheritance :-**
+  #### "**proto**" in "**proto**", Multiple prototype until comes Object prototype
+  @ **Property Descriptor :-**
+  #### Get : Object.getOwnPropertyDescriptor(obj, 'key')
+  #### Set : Object.defineProperty(obj, 'key', { enumerable: false,... })
+  @ **Constructor Prototype :-**
+  #### Other way of finding prototype from a constructor function / pattern : FunctionName.prototype
+  #### Setting prototype [for inheriting common property to all 'var
+  ... = new FunctionName()', though it will be hidden in **proto**, it
+  can be used publicly as a property or method] :
+  FunctionName.prototype.newProperty = 'value'
+  @ **Prototype vs Instance Member :-**
+  #### Instance = body or child, Prototype = out of body or parent
+  #### Use prototype for avoiding duplicated instance, we can use anything from instance to prototype area [we = member]
     <aside>
     💡 You can check `Obj.hasOwnProperty()`, Don't overwrite 
     built-in prototypes but can write for local object, `Object.keys(Obj)` = 
@@ -458,32 +422,27 @@ making a base class [containing the qualities of others] which is common
     ⚠️ Don't use inheritance when the object layer ismore than two. For more than two, solution is OOP Composition.
     
     </aside>
-    
+
 - **Intro to Polymorphism :**
-    
-    @ Method overwriting after 'Extend' function and Prototypical Inheritance - [possible]
-    
-    ```jsx
-    var Circle/Triangle = function(width){
-      this.width = width
-    }
-    Shape.prototype.showMe = mainFunc();
-    
-    extendNew(Circle, Shape);
-    extendNew(Triangle, Shape);
-    
-    Circle.prototype.showMe = changeFunc1();
-    Triangle.prototype.showMe = changeFunc2();
-    
-    shape.showMe()  // I am default
-    circle.showMe()  // I am from Circle after overwrite
-    triangle.showMe()  // Hello World, the end
-    ```
-    
+  @ Method overwriting after 'Extend' function and Prototypical Inheritance - [possible]
+  ```jsx
+  var Circle/Triangle = function(width){
+    this.width = width
+  }
+  Shape.prototype.showMe = mainFunc();
+
+  extendNew(Circle, Shape);
+  extendNew(Triangle, Shape);
+
+  Circle.prototype.showMe = changeFunc1();
+  Triangle.prototype.showMe = changeFunc2();
+
+  shape.showMe()  // I am default
+  circle.showMe()  // I am from Circle after overwrite
+  triangle.showMe()  // Hello World, the end
+  ```
 - **OOP Composition**
-    
-    @ None
-    
+  @ None
 
 **Core 9 : ES6**
 
@@ -516,35 +475,35 @@ making a base class [containing the qualities of others] which is common
 - **Method Overriding** [Just Make a Method]
 - **Module Systems** [Old: AMD,CommonJS,UMD; New: ES6 Modules]
 - **Error Handling** [ with If Else, with Try Catch Finally] and Throwing
-Error on Try Block; Optional Catch Binding; Custom Error Class
+  Error on Try Block; Optional Catch Binding; Custom Error Class
 
 **Core 10 : ASYNCHRONOUS PROGRAMMING**
 
 - **What is Synchronize** [Waiting for one service to complete]
 - **What is Asynchronize** [Opposite of Synchronize; Multiple things at a time]
 - **Asynchronus Programming** [Related to file system, databases, web api
-system, rest api, ajax], Example [`setTimeout(callback, delay)`]
+  system, rest api, ajax], Example [`setTimeout(callback, delay)`]
 - **Why Does Javascript Act Like Asynchronous** [Because JS is a single-threaded language] [Java, Python is multi-threaded]
 - **JS has two data structures : heap** [for managing variables] and **stack** [for managing functions]
 - **JS can handle multiple tasks because of 4 terms though It is
-single-threaded** [4 terms for making asynchronus :- Call Stack, Web API,
-Event Loop, Callback/Task Queue]
+  single-threaded** [4 terms for making asynchronus :- Call Stack, Web API,
+  Event Loop, Callback/Task Queue]
 - **How JS Handle Asynchronous**
-[Call stack -> Web API -> Task Queue -> Call stack ->
-Output] [JS really is Synchronus, but JS V8 Engine make this
-asynchronus]
+  [Call stack -> Web API -> Task Queue -> Call stack ->
+  Output] [JS really is Synchronus, but JS V8 Engine make this
+  asynchronus]
 - **What Does V8 Engine Do** [1. Compile & Execute JS code, 2. Handling Call Stack, 3. Handling Heap Memory to Allocate Memory for Variables, 4. Collect Garbage - Release Memory Which Is No Longer Necessary, 5. Provide Data Types, Operators, Objects and Functions]
 - **What Does Not V8 Engine Do** [1. DOM and It's Handling, 2. Multiple V8 Engine Never Share Variables or Context Among Themself]
 - **Handle Asynchronous Tasks** [Three Ways : Callback, Promise, Async
-Await], **Handle Collection on Async Operation** [Three Ways : Async
-Iterator, For Await Of Loop, Async Generator]
+  Await], **Handle Collection on Async Operation** [Three Ways : Async
+  Iterator, For Await Of Loop, Async Generator]
 - **AJAX** [Asynchronus Javascript and XML (Though XML in name but really JSON) -
-It's a Web API, we can communicate with server through this API for
-getting particular data - This Web API is similar to REST API]
+  It's a Web API, we can communicate with server through this API for
+  getting particular data - This Web API is similar to REST API]
 - **AJAX with Callback** [Putting AJAX xhr in a custom function then use callback function as an argument]
 - **General Callback Not Always Asynchronous in Javascript, Why Not
-Callback Always Helpful** [Due to long chain and hard to manage chain],
-**Solution** [Solution is Promise Callback]
+  Callback Always Helpful** [Due to long chain and hard to manage chain],
+  **Solution** [Solution is Promise Callback]
 - **Promise** [It's a constructor function, which has one callback argument and callback has two argument - resolve, reject]
 
 <aside>
@@ -555,8 +514,8 @@ Callback Always Helpful** [Due to long chain and hard to manage chain],
 - **Fetch API** [Use promise, don't need of callback like XMLHttpRequest], **Chain of 'then'** [Another promise after resolve]
 - **Implement fetch API by Promise**; Promise All; Promise Race;
 - **Async Await** [Easy to use promise; Async returns promise; Await behaves
-like Then(); Await keyword must be used inside an 'async' function],T**ry
-Catch with Async Await** for Handling Error
+  like Then(); Await keyword must be used inside an 'async' function],T**ry
+  Catch with Async Await** for Handling Error
 - **Async Iterator** [Convert synchronus iterator to asynchronus], **JavaScript Immediately Invoked Function Expressions** (IIFEs)
 - **Async For Await Of Loop** [Convert synchronus iterator to asynchronus], **Async Generators**
 
@@ -581,28 +540,26 @@ Catch with Async Await** for Handling Error
 
 - **JS Developemt in** [front-end, back-end, web, mobile-app, desktop-app, cross-platform-app]
 - **InterviewQA**
-    
-    1. Value vs Reference(copy by value, pass by Value, copy by reference or pass by reference)
-    
-    2. JavaScript Scope
-    
-    3. JavaScript Hoisting
-    
-    4. Closure
-    
-    5. JavaScript "this", call, bind apply, new Bindings
-    
-    6. Var vs Let vs const (in depth)
-    
-    7. Prototype and Inheritance (object oriented JavaScript)
-    
-    8. Javascript Event Loop
-    
-    9. Asynchronous JavaScript (callback, promise, Async Await)
-    
-    10. Higher Order Function, callback Function
-    
+  1. Value vs Reference(copy by value, pass by Value, copy by reference or pass by reference)
+
+  2. JavaScript Scope
+
+  3. JavaScript Hoisting
+
+  4. Closure
+
+  5. JavaScript "this", call, bind apply, new Bindings
+
+  6. Var vs Let vs const (in depth)
+
+  7. Prototype and Inheritance (object oriented JavaScript)
+
+  8. Javascript Event Loop
+
+  9. Asynchronous JavaScript (callback, promise, Async Await)
+
+  10. Higher Order Function, callback Function
 - **CPU Intensive Task** -> No need of other server, requested server's CPU can handle the task. Like: Request 1 + 2 = ?
 - **I/O Intensive Task** -> Need of going to another server or database..... like: Data Upload or Edit or Get
 - **Node.JS** is not suitable for CPU intensive tasks, Only for I/O intensive tasks. Also it is event-based & asynchronus. Event loop has made it perfect
- for handling multiple task.
+  for handling multiple task.

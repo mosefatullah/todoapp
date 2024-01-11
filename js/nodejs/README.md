@@ -1,18 +1,31 @@
-### NodeJS
+<h3 align="center">
+    <img src="https://cdn.iconscout.com/icon/free/png-512/node-js-1174925.png" alt="NodeJS" width="30" height="30"/>
+    <br/>
+    <strong>NodeJS</strong>
+</h3>
 
 #### [] Introduction
-* Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
+
+- Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
 
 #### [] Learning Resources
-* [Learn With Sumit - Nodejs](https://www.youtube.com/playlist?list=PLHiZ4m8vCp9M6HVQv7a36cp8LKzyHIePr) `Tutorial`
+
+- [Learn With Sumit - Nodejs](https://www.youtube.com/playlist?list=PLHiZ4m8vCp9M6HVQv7a36cp8LKzyHIePr) `Tutorial`
 
 #### [] Certifications
-* None
+
+- None
 
 #### [] Timelines
-* `2024-01-01` Started *Nodejs* tutorial on Learn With Sumit
 
-### [] Covered Topics
+- `2024-01-01` Started _Nodejs_ tutorial on Learn With Sumit
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h3 align="center">Notes</h3>
 
 #### Learn With Sumit - Nodejs
 

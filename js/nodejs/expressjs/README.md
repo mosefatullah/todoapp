@@ -1,22 +1,36 @@
-### ExpressJS
+<h3 align="center">
+   <img src="https://cdn.iconscout.com/icon/free/png-512/express-1-1175029.png" alt="ExpressJS" width="30" height="30"/>
+   <br/>
+   <strong>ExpressJS</strong>
+</h3>
+
 #### [] Introduction
+
 - A micro-framework for creating complete web application using nodejs & making API
 
 #### [] Learning Resources
-* [Learn With Sumit - Nodejs](https://www.youtube.com/playlist?list=PLHiZ4m8vCp9M6HVQv7a36cp8LKzyHIePr) `Tutorial`
+
+- [Learn With Sumit - Nodejs](https://www.youtube.com/playlist?list=PLHiZ4m8vCp9M6HVQv7a36cp8LKzyHIePr) `Tutorial`
 
 #### [] Certifications
 
 #### [] Timelines
-* `2024-01-07` Started learning *ExpressJS* from *Nodejs* tutorial on Learn With Sumit
 
-#### [] Covered Topics
+- `2024-01-07` Started learning _ExpressJS_ from _Nodejs_ tutorial on Learn With Sumit
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<h3 align="center">Notes</h3>
 
 ##### Learn With Sumit - Nodejs
 
 - **Expressjs** (Micro-framework for creating complete web application using nodejs & making API) (express(), application, request, response, router)
 
-- **Express Function** (.json() - json body parseing, .raw() - raw body parsing, .text() - text body persing, .urlencoded() - url encoded body parsing, .static(__dirname + '/public/') - public folder, .Router() - routing mechanism)
+- **Express Function** (.json() - json body parseing, .raw() - raw body parsing, .text() - text body persing, .urlencoded() - url encoded body parsing, .static(\_\_dirname + '/public/') - public folder, .Router() - routing mechanism)
 
 - **Express Application** (.locals - storing variables, .mountpath - root path of sub app, .on("mount") - mount event for sub app, .all() - all http methods for routes, .enable() - enable an option, .disable() - disable an option, .METHOD_NAME() - specific http methods, .get/set() - setting & getting variables, .listen() - starts server, .param() - url parameter, .path() - canonical path of sub app, .route() - group of routes, .use() - using middleware, template engine rendering - 0)
 
