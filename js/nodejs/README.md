@@ -27,6 +27,31 @@
 <br/>
 <h3 align="center">Notes</h3>
 
+#### Nodejs - Topic
+
+- Nodejs Architecture
+- Nodejs Built-in Modules
+- Express Framework
+- Route & Middleware
+- Template Engines
+- Session & Cookies
+- Authentication Techniques
+- File Upload, Public Directory
+- Error Handling & Debugging
+- REST API Specifications
+- MongoDB with Mongoose
+- MySQL with Sequelize
+- Email with Nodemailer
+- Twilio, Sendgrid and Pusher
+- Socket.io
+- GraphQL, Prisma & Apollo
+- Cloudinary, AWS S3 & Vimeo
+- Test Driven Development
+- NodeJS Design Patterns
+
+<br/>
+<br/>
+
 #### Learn With Sumit - Nodejs
 
 - **About Nodejs** (How it is event-driven, non-blocking I/O, asynchronus and single-threaded) (error back pattern in a callback function)
@@ -41,32 +66,48 @@
 
 - **Raw Project for Understanding** (Uptime monitoring api : restful api, authentication, authorization, user signup & add/edit settings, sms notification using twilio api - with raw nodejs, no modules)
 
-- - **Requirements Analysis :-**
+  - **Requirements Analysis :-**
 
-- - - 1. Start the API Server
-- - - 2. Create, Edit, Delete User
-- - - 3. Token based authentication
-- - - 4. Logout Mechanism
-- - - 5. Set links & Up/Down
-- - - 6. Edit/Delete links & rate limit
-- - - 7. Check up/down time
+    - 1. Start the API Server
+    - 2. Create, Edit, Delete User
+    - 3. Token based authentication
+    - 4. Logout Mechanism
+    - 5. Set links & Up/Down
+    - 6. Edit/Delete links & rate limit
+    - 7. Check up/down time
 
-- - **Environment** - Eslint & Prettier (eslint, eslint-config-airbnb-base, eslint-config-prettier, eslint-plugin-import, eslint-plugin-prettier, prettier), Server restarting (nodemon)
+  - **Environment** - Eslint & Prettier (eslint, eslint-config-airbnb-base, eslint-config-prettier, eslint-plugin-import, eslint-plugin-prettier, prettier), Server restarting (nodemon)
 
-- - **Database** - JSON (Unreal; Only for Our Project)
+  - **Database** - JSON (Unreal; Only for Our Project)
 
-- - **Project** -
+  - **Project** -
 
-- - - **[Part1]** (Built-in modules - http, url, string_decoder) (index.js, helpers/handleReRes.js, routes/routes.js, routes/handlers/sampleHandler.js, routes/handler/notFoundHandler.js)
+    - **[Part1]** (Built-in modules - http, url, string_decoder) (index.js, helpers/handleReRes.js, routes/routes.js, routes/handlers/sampleHandler.js, routes/handler/notFoundHandler.js)
 
-- - - **[Part2]** (Environment variables - run `KEY=VALUE node index/app` & use `process.env.KEY`; nodemon - for windows : `SET \"NODE_ENV=production\" && nodemon index`, for mac : `NODE_ENV=production nodemon index`) (helpers/environment.js, .data/, lib/data.js)
+    - **[Part2]** (Environment variables - run `KEY=VALUE node index/app` & use `process.env.KEY`; nodemon - for windows : `SET \"NODE_ENV=production\" && nodemon index`, for mac : `NODE_ENV=production nodemon index`) (helpers/environment.js, .data/, lib/data.js)
 
-- - - **[Part3]** (Built-in module for hash - crypto) (CRUD handling for users) (.data/users/, routes/handlers/userHandler.js, helpers/utilities.js)
+    - **[Part3]** (Built-in module for hash - crypto) (CRUD handling for users) (.data/users/, routes/handlers/userHandler.js, helpers/utilities.js)
 
-- - - **[Part4]** (Generating tokens by creating simple random string) (CRUD handling for tokens) (routes/handlers/tokenHandler.js, .data/tokens/)
+    - **[Part4]** (Generating tokens by creating simple random string) (CRUD handling for tokens) (routes/handlers/tokenHandler.js, .data/tokens/)
 
-- - - **[Part5]** (Max limits in environment variable like 5 checks) (CRUD handling for checks) (routes/handlers/checkHandler.js, .data/checks/)
+    - **[Part5]** (Max limits in environment variable like 5 checks) (CRUD handling for checks) (routes/handlers/checkHandler.js, .data/checks/)
 
-- - - **[Part6]** (Built-in modules - https, querystring) (Using twilio api for sending messages to user's phone) (helpers/notify.js)
+    - **[Part6]** (Built-in modules - https, querystring) (Using twilio api for sending messages to user's phone) (helpers/notify.js)
 
-- - - **[Part7]** (Running background workers in loop) (lib/server.js, lib/workers.js)
+    - **[Part7]** (Running background workers in loop) (lib/server.js, lib/workers.js)
+
+- **Expressjs** (Micro-framework for creating complete web application using nodejs & making API) (express(), application, request, response, router)
+
+- **Express Function** (.json() - json body parseing, .raw() - raw body parsing, .text() - text body persing, .urlencoded() - url encoded body parsing, .static(\_\_dirname + '/public/') - public folder, .Router() - routing mechanism)
+
+- **Express Application** (.locals - storing variables, .mountpath - root path of sub app, .on("mount") - mount event for sub app, .all() - all http methods for routes, .enable() - enable an option, .disable() - disable an option, .METHOD_NAME() - specific http methods, .get/set() - setting & getting variables, .listen() - starts server, .param() - url parameter, .path() - canonical path of sub app, .route() - group of routes, .use() - using middleware, template engine rendering - 0)
+
+- **Express Request** (represents the http request; properties : .baseUrl - base path of current app, .originalUrl - original path of current app, .path - path of current app, .host - hostname of server, .ip - ip address of server, .method - request method, .protocol - https/http/others, .params - object of parameters with colon, .query - request query parameters, .body - request body, .cookies - client's cookies, .signedCookies - client's secured cookies, .secure - is https or non-https, .app - application object, .route - route object) (.body requires parser like express.json() & .cookies requires cookie-parser) (methods : .accepts() - checking client's fomat, .get() - getting a header)
+
+- **Express Response** (properties : .app - application object, .headersSent - is headers sent, res.locals - local variables in template; methods : .cookie() - setting cookie, res.clearCookie() - clearing cookie, .end() - ending response process, .send() - ending with data, .json() - sending json, .status() - setting status code, .sendStatus() - sending status code with data, .render() - renders a view, .format() - sending data with multiple content types, .location() - sets the response location for redirecting, .redirect() - auto redirect, .get/set() - getting or setting header)
+
+- **Express Middleware** (types - application-level, routing-level, built-in, error-handling)
+
+- **Express Router** (methods : .all() - all http methods, .METHOD_NAME() - specific http method, .param() - url parameter, .route() - group of routes, .use() - using middleware) (route path - can not only use strings but also pattern and regular expression or regex)
+
+- **Error Handling** ()

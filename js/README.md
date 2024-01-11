@@ -33,6 +33,32 @@
 <br/>
 <h3 align="center">Notes</h3>
 
+##### Javascript - Topic
+- Programming Fundamentals
+- Data Types and Type Coercion
+- Condition and Loops
+- Function
+- Arrays and Objects
+- Functional Programming
+- Global and Lexical Scope
+- Execution Context
+- Variable Object and Hoisting
+- Scope Chain and Closure
+- Object Oriented Programming
+- Object Creation Patterns
+- Prototype and Inheritance
+- Global Object and This Keyword
+- Bind, Call and Apply
+- Object and Object References
+- Asynchronous Programming
+- Error Handling
+- DOM Manipulation
+- ECMAScript 6
+- Javascript Engine
+
+<br/>
+<br/>
+
 ##### Stack Learner - Javascript All You Need to Know
 
 ## **BASIC**
