@@ -11,4 +11,10 @@
 ### Plans
 1. Create a Facebook Group for Ihasway Community, where we can share our knowledge, experience, and ideas.
 2. Distribute Ihasway Community's duties among the members.
-3. Create a website for Ihasway Community, where we can share our knowledge, experience, and ideas.
+3. Share my youtube videos in the group & encourage others to share their videos.
+4. Create a website for Ihasway Community, where we can share our knowledge, experience, and ideas.
+
+### Team Members
+* Mohammad Sefatullah - Founder & CEO of Ihasway, Group Expert in Web Development
+* Saifur Rahman Mahin - Group Expert in Technology
+* S.M. Abtahi Noor - Group Expert in Programming
