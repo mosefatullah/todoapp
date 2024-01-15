@@ -110,4 +110,13 @@
 
 - **Express Router** (methods : .all() - all http methods, .METHOD_NAME() - specific http method, .param() - url parameter, .route() - group of routes, .use() - using middleware) (route path - can not only use strings but also pattern and regular expression or regex)
 
-- **Error Handling** ()
+
+- **Error Handling** (managing errors in both synchronous and asynchronous contexts) (synchronous system - express's default error handler operates invisibly; to modify that we have to write our custom middleware function down below & then send our response) (asynchronous system - passing error to next functio, detected from built-in error objects or try-catch blocks) (middleware chaining in route arrays - reduces asynchronous code, making it more synchronous)
+
+- **File Upload with Multer** (parsing multi-part data or form data; methods : .single - one field & one file, .array - one field but multiple files, .fields - multiple fields, .none - not files but form data) (file upload validation properties : limits, limits.fileSize - size limit in bytes, limits.fileFilter - callback function for validation) (file configuration methods : .diskStorage - modify destination & filename)
+
+- **MongoDB Introduction & Installation** (mongodb is a nosql language and non-relational database management system; it's useful for javascript developers, because it uses bson format (lightweight, traversable, and efficient rather than json) similar to the structures of json) (sql to nosql : table - collection, row - document, column - field) (locally installation - try free > mongodb local > mongodb community server > download; then read the docs - docs > server > installation > community edition > follow the processes)
+
+- **MongoDB Basic CRUD Commands** (Command of opening mongo shell : mongo) (default database - admin, config, local (don't touch)) (mongodb commands : show dbs - showing all databases, use NAME - create & switch to a new database, db - current database, db.NAME - create a new collection, db.NAME :- .insertOne({}) - insert a document, .find()/.find().pretty()/... .limit()/skip() - find all documents, .insertMany([]) - insert multiple documents, .findOne() - find one collection, .updateOne({}, {})/.updateMany({}, {}) - updating collections (find+update), .deleteOne({})/deleteMany({}) - deleting collections) (MongoDB compass is for visualization without any commands)
+
+- **Mongoose CRUD Application**- (Mongoose is a Object Data Modeling for mongodb; it's used to model the data as js object; Mongoose connects to the MongoDB server automatically, whereas MongoDB does not) (Benefits - abstraction from raw low level mongodb, relation between nosql data, provides schema validation, translation of data into object, 40 to 60% less code compared to raw mongodb package) (topics - schema design, mongoose model using schema) (CRUD methods : .find, .findById, .save, .insertMany, .updateOne, .deleteOne, .findByIdAndUpdate)

@@ -129,5 +129,6 @@
 -
 - React UseRef (DOM Reference - getting reference of an element with reactive way) (React ForwardRef is used for component; not for an element, it returns new component similarly like HOC pattern) (UseRef as a storage - rerendering can't change it's value; just setting value of myRef.current for storing)
 -
+- React UseReducer (Related to state management; useState founded based on it; js reduce vs useRed.; it's supports action-based state changing while useState don't; scenario - state & action as primitive value/object, useRed. with useContext, useRed. with useEffect, useRed. vs useState) (number of state change - (1-3: useState), (3+: useRed.); many related states/complex logic - useRed.; data type of states - (string, number, boolean: useState), (object, array: useRed.); scope of state - (local: useState), (global: useRed.)) (it has class component's flavour)
 -
 - React Router (Routing to pages without refreshing), Error Page Making With React Router
