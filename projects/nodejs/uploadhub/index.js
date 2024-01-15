@@ -66,63 +66,103 @@ app.post(
   let profileImg = null,
    galleryImg = [];
 
-  fs.readFile(profile.path, (err, data) => {
-   if (err) throw err;
-   profileImg =
-    "data:image/png;base64," + new Buffer.from(data).toString("base64");
-   gallery.forEach((image) => {
-    fs.readFile(image.path, (err, data) => {
-     if (err) throw err;
-     galleryImg.push(
-      "data:image/png;base64," + new Buffer.from(data).toString("base64")
-     );
-     res.status(200).send(
-      `
-          <html>
-              <head>
-                  <title>UploadHub</title>
-              </head>
-              <body>
-              <style>
-                body {
-                    font-family: Arial, Helvetica, sans-serif;
-                    text-align: center;
-                }
-                img {
-                    display: block;
-                    margin: auto;
-                    max-width: 300px;
-                    height: auto;
-                    min-height: 100px;
-                    background-color: #f5f5f5;
-                }
-                img.profile {
-                    width: 150px;
-                    height: 150px;
-                    border-radius: 100rem;
-                }
-                img.cover {
-                    width: 100%;
-                    height: 200px;
-                    object-fit: cover;
-                }
-                </style>
-                  <h1>UploadHub</h1>
-                  <h3>Profile Picture</h3>
-                  <img src="${profileImg}" class="profile" alt="Profile Picture" />
-                  <h3>Gallery</h3>
-                  ${galleryImg.map((image) => {
-                   return `<img src="${image}" class="cover" alt="Gallery Image" />`;
-                  })}
-              </body>
-          </html>
-          `
-     );
-    });
-   });
-  });
+  // generate id for user & store in data folder with profile & gallery images
+  const id = Date.now();
+  fs.writeFile(
+   `data/${id}.json`,
+   JSON.stringify({ id, profile, gallery }),
+   (err) => {
+    if (err) throw err;
+    else {
+        res.redirect(`/u/${id}`);
+    }
+   }
+  );
  }
 );
+
+/*
+ * Retrieve Profile with ID
+ * GET /profile
+ */
+app.get("/u/:id", (req, res) => {
+ const id = req.params.id;
+ fs.readFile(`data/${id}.json`, (err, data) => {
+  if (err) {
+   res.status(404).send(`
+    <html>
+        <head>
+            <title>UploadHub</title>
+        </head>
+        <body align="center">
+            <h1>UploadHub</h1>
+            <h3>Profile not found!</h3>
+        </body>
+    </html>
+  `);
+  } else {
+   const { profile, gallery } = JSON.parse(data);
+   let profileImg = null,
+    galleryImg = [];
+   fs.readFile(profile.path, (err, data) => {
+    if (err) throw err;
+    profileImg =
+     "data:image/png;base64," + new Buffer.from(data).toString("base64");
+    gallery.forEach((image) => {
+     fs.readFile(image.path, (err, data) => {
+      if (err) throw err;
+      galleryImg.push(
+       "data:image/png;base64," + new Buffer.from(data).toString("base64")
+      );
+      res.status(200).send(
+       `
+         <html>
+             <head>
+                 <title>UploadHub</title>
+             </head>
+             <body>
+             <style>
+               body {
+                   font-family: Arial, Helvetica, sans-serif;
+                   text-align: center;
+               }
+               img {
+                   display: block;
+                   margin: auto;
+                   max-width: 300px;
+                   height: auto;
+                   min-height: 100px;
+                   background-color: #f5f5f5;
+                   object-fit: cover;
+               }
+               img.profile {
+                   width: 150px;
+                   height: 150px;
+                   border-radius: 100rem;
+                   border: 6px solid #ddd;
+               }
+               img.cover {
+                   width: 100%;
+                   border: 1px solid #ddd;
+               }
+               </style>
+                 <h1>UploadHub</h1>
+                 <h3>Profile Picture</h3>
+                 <img src="${profileImg}" class="profile" alt="Profile Picture" />
+                 <h3>Gallery</h3>
+                 ${galleryImg.map((image) => {
+                  return `<img src="${image}" class="cover" alt="Gallery Image" />`;
+                 })}
+             </body>
+         </html>
+         `
+      );
+     });
+    });
+   });
+  }
+ });
+});
 
 /*
  * Error handling
