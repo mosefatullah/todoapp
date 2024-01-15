@@ -46,7 +46,7 @@ Ihasway is an untold platform & organization formed by Mohammad Sefatullah relat
 
 🌺
 
-**Rules of The Group*** (v1.0) ***:**
+**Rules of The Group** *(v1.0)* :**
 * Attitute - Should Be Kind & Moral!
 > We're  all in this together to create a better community. Let's treat everyone  with respect. Healthy debates are natural, but kindness is required.
 * Attitute - No Hate Speech Allowed!
@@ -60,7 +60,7 @@ Ihasway is an untold platform & organization formed by Mohammad Sefatullah relat
 
 🌺
 
-**Rules Of Posting*** (v1.0) ***:**
+**Rules Of Posting** *(v1.0)* :**
 * Should be posted either in Bangla or English language, Banglish language is not approved!
 * Political posts, social posts (irrelevant to the group), religious (irrelevant to the group) posts are not allowed!
 * No indecent or female images of any kind may be included!
