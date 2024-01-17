@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 
 // express app initialization
 const app = express();
-app.use(express.static("public"));
+app.use(express.static("public/dist"));
 app.use(express.json());
 dotenv.config();
 
