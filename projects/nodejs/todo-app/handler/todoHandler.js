@@ -2,12 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const router = express.Router();
 const todoSchema = require("../schema/todoSchema");
+const checkLogin = require("../middlewares/checkLogin");
 
 // Todo model
 const Todo = mongoose.model("Todo", todoSchema);
 
 // GET - get all todos
-router.get("/", async (req, res) => {
+router.get("/", checkLogin, async (req, res) => {
  try {
   const data = await Todo.find()
    .limit(parseInt(req.body.endAt))
@@ -18,7 +19,7 @@ router.get("/", async (req, res) => {
   });
  } catch (err) {
   res.status(500).json({
-   error: err.message || "Some error occurred while retrieving the Todos.",
+   error: err.message || "Some error occurred!",
   });
  }
 });
@@ -26,14 +27,14 @@ router.get("/", async (req, res) => {
 // GET - get a todo by id
 router.get("/:id", async (req, res) => {
  try {
-  const data = await Todo.findById(req.params.id);
+  const data = await Todo.findById(req.params.id) || {};
   res.status(200).json({
    message: "Todo was fetched successfully!",
    data,
   });
  } catch (err) {
   res.status(500).json({
-   error: err.message || "Some error occurred while retrieving the Todo.",
+   error: err.message || "Some error occurred!",
   });
  }
 });
@@ -49,7 +50,7 @@ router.post("/", async (req, res) => {
   });
  } catch (err) {
   res.status(500).json({
-   error: err.message || "Some error occurred while creating the Todo.",
+   error: err.message || "Some error occurred!",
   });
  }
 });
@@ -64,7 +65,7 @@ router.post("/bulk", async (req, res) => {
   });
  } catch (err) {
   res.status(500).json({
-   error: err.message || "Some error occurred while creating the Todos.",
+   error: err.message || "Some error occurred!",
   });
  }
 });
@@ -90,7 +91,7 @@ router.put("/:id", async (req, res) => {
   });
  } catch (err) {
   res.status(500).json({
-   error: err.message || "Some error occurred while updating the Todo.",
+   error: err.message || "Some error occurred!",
   });
  }
 });
@@ -104,7 +105,7 @@ router.delete("/:id", async (req, res) => {
   });
  } catch (err) {
   res.status(500).json({
-   error: err.message || "Some error occurred while deleting the Todo.",
+   error: err.message || "Some error occurred!",
   });
  }
 });
