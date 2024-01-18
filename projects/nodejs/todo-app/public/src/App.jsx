@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Todos from "./pages/Todos";
-import Search from "./pages/Search";
+import Category from "./pages/Category";
+import Timeline from "./pages/Timeline";
 
 function App() {
  return (
@@ -10,8 +10,8 @@ function App() {
    <BrowserRouter>
     <Routes>
      <Route path="/" element={<Home />} />
-     <Route path="/todos" element={<Todos />} />
-     <Route path="/search" element={<Search />} />
+     <Route path="/timeline" element={<Category />} />
+     <Route path="/category" element={<Timeline />} />
     </Routes>
    </BrowserRouter>
   </>
