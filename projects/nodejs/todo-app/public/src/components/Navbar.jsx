@@ -2,9 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/todo-icon.png";
 
-function Navbar() {
- const [openNav, setOpenNav] = React.useState(true);
+function Navbar({ toggleSidebar }) {
  const [openUserMenu, setOpenUserMenu] = React.useState(true);
+ const [expandSidebar, setExpandSidebar] = React.useState(false);
+ React.useEffect(() => {
+  setExpandSidebar(localStorage.getItem("todo.app.expandSidebar") === "true");
+  if (toggleSidebar)
+   toggleSidebar(localStorage.getItem("todo.app.expandSidebar") === "true");
+ }, []);
  return (
   <>
    <nav className="bg-white border-b sticky top-0 left-0">
@@ -12,8 +17,17 @@ function Navbar() {
      <div className="relative flex h-16 items-center justify-between space-x-1 sm:space-x-2 md:space-x-4">
       <button
        type="button"
-       className="rounded-full relative inline-flex items-center justify-center p-3 text-gray-400 hover:bg-gray-200 hover:text-gray-500"
-       onClick={() => setOpenNav(!openNav)}
+       className={
+        "rounded-full relative inline-flex items-center justify-center p-3 text-gray-500 hover:bg-gray-200 hover:text-gray-600 " +
+        (toggleSidebar == null ? "hidden" : "block")
+       }
+       onClick={() => {
+        if (toggleSidebar) {
+         localStorage.setItem("todo.app.expandSidebar", !expandSidebar);
+         toggleSidebar(!expandSidebar);
+         setExpandSidebar(!expandSidebar);
+        }
+       }}
       >
        <svg
         className="block h-6 w-6"
@@ -48,7 +62,12 @@ function Navbar() {
        <div className="flex flex-shrink-0 items-center">
         <img className="h-8 w-auto" src={Logo} alt="Todo App" />
        </div>
-       <div className="hidden sm:ml-6 sm:block">
+       <div
+        className={
+         "hidden sm:ml-6 sm:block " +
+         (toggleSidebar == null ? "invisible" : "block")
+        }
+       >
         <input
          type="search"
          className="px-3 py-2 rounded-md bg-gray-100"
@@ -56,10 +75,15 @@ function Navbar() {
         />
        </div>
       </div>
-      <div className="flex items-center pl-6 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+      <div
+       className={
+        "flex items-center pl-6 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 " +
+        (toggleSidebar == null ? "hidden" : "block")
+       }
+      >
        <button
         type="button"
-        className="rounded-full relative inline-flex items-center justify-center p-3 text-gray-400 hover:bg-gray-200 hover:text-gray-500"
+        className="rounded-full relative inline-flex items-center justify-center p-3 text-gray-500 hover:bg-gray-200 hover:text-gray-600"
        >
         <svg
          className="h-6 w-6"
@@ -77,7 +101,7 @@ function Navbar() {
        </button>
        <button
         type="button"
-        className="rounded-full relative inline-flex items-center justify-center p-3 text-gray-400 hover:bg-gray-200 hover:text-gray-500"
+        className="rounded-full relative inline-flex items-center justify-center p-3 text-gray-500 hover:bg-gray-200 hover:text-gray-600"
        >
         <svg
          xmlns="http://www.w3.org/2000/svg"
@@ -142,11 +166,12 @@ function Navbar() {
          <a
           href="#"
           className="block px-4 py-2 text-sm text-gray-700"
-          role="menuitem"
-          tabIndex="-1"
-          id="user-menu-item-2"
+          onClick={() => {
+           localStorage.removeItem("lxoxg");
+           window.location.href = "/login";
+          }}
          >
-          Sign out
+          Log out
          </a>
         </div>
        </div>

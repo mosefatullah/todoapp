@@ -4,9 +4,23 @@ const router = express.Router();
 const userSchema = require("../schema/userSchema");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const checkLogin = require("../middlewares/checkLogin");
 
 // User model
 const User = mongoose.model("User", userSchema);
+
+// GET - verify token
+router.get("/verify", checkLogin, async (req, res) => {
+ try {
+  res.status(200).json({
+   message: "Successfully logged in!",
+  });
+ } catch (err) {
+  res.status(500).json({
+   error: err.message || "Some error occurred!",
+  });
+ }
+});
 
 // GET - get all users
 router.get("/", async (req, res) => {
@@ -29,9 +43,10 @@ router.get("/", async (req, res) => {
 // GET - get a user by id
 router.get("/:username", async (req, res) => {
  try {
-  const data = await User.findOne({ username: req.params.username }).select(
-   "-password"
-  ) || {};
+  const data =
+   (await User.findOne({ username: req.params.username }).select(
+    "-password"
+   )) || {};
   res.status(200).json({
    message: "User was fetched successfully!",
    data,
@@ -101,7 +116,7 @@ router.post("/login", async (req, res) => {
    }
   } else {
    res.status(401).json({
-    error: "Authentication failed!",
+    error: "Authentication failed t!",
    });
   }
  } catch (err) {

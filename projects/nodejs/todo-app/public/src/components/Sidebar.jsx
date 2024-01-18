@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function Sidebar({ children }) {
+function Sidebar({ children, expandSidebar }) {
  return (
   <div className="flex">
-   <div className="min-w-[300px]">
+   <div className="min-w-[300px]" hidden={!expandSidebar}>
     <div className="sticky top-[77px] left-0 flex w-full flex-col my-3">
      <NavLink
       to="/"
@@ -82,7 +82,7 @@ function Sidebar({ children }) {
      </NavLink>
     </div>
    </div>
-   <div className="w-full overflow-x-auto">{children}</div>
+   <div className="w-full overflow-x-auto px-3">{children}</div>
   </div>
  );
 }

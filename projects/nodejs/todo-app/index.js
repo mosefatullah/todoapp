@@ -3,12 +3,14 @@ const mongoose = require("mongoose");
 const todoHandler = require("./handler/todoHandler");
 const userHandler = require("./handler/userHandler");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 // express app initialization
 const app = express();
 app.use(express.static("public/dist"));
 app.use(express.json());
 dotenv.config();
+app.use(cors());
 
 // database connection
 mongoose
