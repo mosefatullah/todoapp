@@ -1,15 +1,30 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { logIn } from "../utils/api";
+import Alert from "../components/Alert";
 
 function Login() {
+ const [alert, setAlert] = React.useState({
+  title: "",
+  description: "",
+  open: false,
+ });
  return (
   <div>
+   <Alert
+    title={alert.title}
+    description={alert.description}
+    open={alert.open}
+    confirmAction={(value) => {
+     setAlert({ ...alert, open: value });
+    }}
+    cancelAction="no"
+   />
    <Navbar />
    <div className="flex flex-col justify-center items-center h-screen">
     <h1 className="text-4xl uppercase font-black">Login</h1>
 
-    <form className="w-full max-w-lg">
+    <form className="w-full max-w-lg mt-8">
      <div className="flex flex-wrap -mx-3 mb-6">
       <div className="w-full px-3">
        <label
@@ -25,7 +40,7 @@ function Login() {
         placeholder="example@gmail.com or example"
        />
        <p className="text-gray-600 text-xs italic">
-        Some tips - as long as needed
+        Email or Username is required.
        </p>
       </div>
      </div>
@@ -43,9 +58,7 @@ function Login() {
         type="password"
         placeholder="******************"
        />
-       <p className="text-gray-600 text-xs italic">
-        Some tips - as long as needed
-       </p>
+       <p className="text-gray-600 text-xs italic">Password is required.</p>
       </div>
      </div>
      <div className="flex flex-wrap -mx-3 mb-2">
@@ -69,10 +82,13 @@ function Login() {
            password: document.querySelector("#grid-password").value,
           },
           (err) => {
-           alert("Error: " + err.error);
+           setAlert({
+            title: "Error",
+            description: err.error || "Something went wrong",
+            open: true,
+           });
           },
           () => {
-           alert("Logged in successfully!");
            window.location.href = "/";
           }
          );

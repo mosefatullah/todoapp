@@ -1,9 +1,15 @@
 import React from "react";
 import NavWithSidebar from "../components/NavWithSidebar";
-import { getTodos } from "../utils/api";
+import { getTodos, addTodo } from "../utils/api";
+import Alert from "../components/Alert";
 
 function Home() {
  const [todos, setTodos] = React.useState([]);
+ const [alert, setAlert] = React.useState({
+  title: "",
+  description: "",
+  open: false,
+ });
  React.useEffect(() => {
   getTodos(
    (err) => {
@@ -18,11 +24,106 @@ function Home() {
  }, []);
  return (
   <div>
+   <Alert
+    title={alert.title}
+    description={alert.description}
+    open={alert.open}
+    confirmAction={(value) => {
+     setAlert({ ...alert, open: value });
+    }}
+    cancelAction="no"
+   />
    <NavWithSidebar>
     <div>
-     <div className="w-full p-4 flex justify-center">
-      <div className="w-full px-4 py-3 max-w-[500px] bg-white text-gray-600 shadow-md border rounded-md cursor-text">
+     <div className="w-full p-4 flex flex-col justify-center items-center">
+      <div
+       id="takeATodo1"
+       className="w-full px-4 py-3 max-w-[500px] bg-white text-gray-600 shadow-md border rounded-md cursor-text"
+       onClick={() => {
+        document.getElementById("takeATodo1").style.display = "none";
+        document.getElementById("takeATodo2").style.display = "";
+        document.querySelectorAll("#takeATodo2 input")[0].focus();
+       }}
+      >
        Take a todo...
+      </div>
+      <div
+       id="takeATodo2"
+       className="w-full px-4 py-3 max-w-[500px] bg-white text-gray-600 shadow-md border rounded-md cursor-text"
+       style={{ display: "none" }}
+      >
+       <input
+        type="text"
+        className="w-full outline-none placeholder-slate-500"
+        placeholder="Title"
+       />
+       <input
+        type="text"
+        className="w-full outline-none text-sm mt-5"
+        placeholder="Description ..."
+       />
+       <div className="flex justify-between items-center mt-5">
+        <div className="flex items-center space-x-2">
+         <button
+          id="addImage"
+          className="px-1 py-1 text-sm bg-gray-200 text-gray-500 rounded-md font-medium hover:bg-gray-300 transition duration-200 ease-in-out"
+         >
+          <svg
+           xmlns="http://www.w3.org/2000/svg"
+           fill="none"
+           viewBox="0 0 24 24"
+           stroke="currentColor"
+           className="w-5 h-5"
+          >
+           <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+           />
+          </svg>
+         </button>
+        </div>
+        <div className="flex items-center space-x-2">
+         <button
+          className="px-4 py-[5px] text-sm bg-blue-500 text-white rounded-md font-medium shadow-md hover:bg-blue-600 transition duration-200 ease-in-out"
+          onClick={() => {
+           addTodo(
+            {
+             title: document.querySelectorAll("#takeATodo2 input")[0].value,
+             description:
+              document.querySelectorAll("#takeATodo2 input")[1].value,
+            },
+            (err) => {
+             setAlert({
+              title: "Error",
+              description: "Failed to add todo!",
+              open: true,
+             });
+            },
+            (data) => {
+             setTodos([data.data, ...todos]);
+             document.querySelectorAll("#takeATodo2 input")[0].value = "";
+             document.querySelectorAll("#takeATodo2 input")[1].value = "";
+             document.getElementById("takeATodo1").style.display = "";
+             document.getElementById("takeATodo2").style.display = "none";
+            }
+           );
+          }}
+         >
+          Add Todo
+         </button>
+         <button
+          className="px-4 py-[5px] text-sm bg-gray-200 text-gray-500 rounded-md font-medium hover:bg-gray-300 transition duration-200 ease-in-out"
+          onClick={() => {
+           document.getElementById("takeATodo1").style.display = "";
+           document.getElementById("takeATodo2").style.display = "none";
+          }}
+         >
+          Cancel
+         </button>
+        </div>
+       </div>
       </div>
      </div>
      <div className="flex justify-center max-w-3xl">

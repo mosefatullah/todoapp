@@ -12,7 +12,7 @@ function Navbar({ toggleSidebar }) {
  }, []);
  return (
   <>
-   <nav className="bg-white border-b sticky top-0 left-0">
+   <nav className="bg-white border-b sticky top-0 left-0 z-50">
     <div className="mx-auto px-2 sm:px-6 lg:px-8">
      <div className="relative flex h-16 items-center justify-between space-x-1 sm:space-x-2 md:space-x-4">
       <button

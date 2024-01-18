@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 function Sidebar({ children, expandSidebar }) {
  return (
-  <div className="flex">
-   <div className="min-w-[300px]" hidden={!expandSidebar}>
+  <div className="app flex">
+   <div className="relative min-w-[70px] sm:min-w-[300px]" hidden={!expandSidebar}>
     <div className="sticky top-[77px] left-0 flex w-full flex-col my-3">
      <NavLink
       to="/"
@@ -19,7 +19,7 @@ function Sidebar({ children, expandSidebar }) {
        viewBox="0 0 24 24"
        strokeWidth={1.5}
        stroke="currentColor"
-       className="w-6 h-6 mr-6"
+       className="w-10 h-6 sm:w-6 sm:mr-6"
       >
        <path
         strokeLinecap="round"
@@ -27,7 +27,7 @@ function Sidebar({ children, expandSidebar }) {
         d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
        />
       </svg>
-      Todos
+      <span className="hidden sm:block">Todos</span>
      </NavLink>
      <NavLink
       to="/timeline"
@@ -42,7 +42,7 @@ function Sidebar({ children, expandSidebar }) {
        viewBox="0 0 24 24"
        strokeWidth={1.5}
        stroke="currentColor"
-       className="w-6 h-6 mr-6"
+       className="w-10 h-6 sm:w-6 sm:mr-6"
       >
        <path
         strokeLinecap="round"
@@ -50,7 +50,7 @@ function Sidebar({ children, expandSidebar }) {
         d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
        />
       </svg>
-      Timeline
+      <span className="hidden sm:block">Timeline</span>
      </NavLink>
      <NavLink
       to="/category"
@@ -65,7 +65,7 @@ function Sidebar({ children, expandSidebar }) {
        viewBox="0 0 24 24"
        strokeWidth={1.5}
        stroke="currentColor"
-       className="w-6 h-6 mr-6"
+       className="w-10 h-6 sm:w-6 sm:mr-6"
       >
        <path
         strokeLinecap="round"
@@ -78,11 +78,11 @@ function Sidebar({ children, expandSidebar }) {
         d="M6 6h.008v.008H6V6Z"
        />
       </svg>
-      Category
+      <span className="hidden sm:block">Category</span>
      </NavLink>
     </div>
    </div>
-   <div className="w-full overflow-x-auto px-3">{children}</div>
+   <div className="w-full px-3">{children}</div>
   </div>
  );
 }

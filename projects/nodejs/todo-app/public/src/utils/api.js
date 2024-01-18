@@ -1,5 +1,7 @@
+const root = "http://localhost:3000";
+
 export const getTodos = async (error, callback) => {
- return await fetch("http://localhost:3000/api/todo", {
+ return await fetch(root + "/api/todo", {
   method: "GET",
   headers: {
    "Content-Type": "application/json",
@@ -20,8 +22,31 @@ export const getTodos = async (error, callback) => {
   });
 };
 
+export const addTodo = async (data, error, callback) => {
+ return await fetch(root + "/api/todo", {
+  method: "POST",
+  headers: {
+   "Content-Type": "application/json",
+   "Access-Control-Allow-Origin": "*",
+   Authorization: `Bearer ${localStorage.getItem("lxoxg")}`,
+  },
+  body: JSON.stringify(data),
+ })
+  .then((res) => res.json())
+  .then((data) => {
+   if (data.error) {
+    error(data);
+   } else {
+    callback(data);
+   }
+  })
+  .catch((err) => {
+   error(err);
+  });
+};
+
 export const signUp = async (data, error, callback) => {
- return await fetch("http://localhost:3000/api/user/signup", {
+ return await fetch(root + "/api/user/signup", {
   method: "POST",
   headers: {
    "Content-Type": "application/json",
@@ -44,7 +69,7 @@ export const signUp = async (data, error, callback) => {
 };
 
 export const logIn = async (data, error, callback) => {
- return await fetch("http://localhost:3000/api/user/login", {
+ return await fetch(root + "/api/user/login", {
   method: "POST",
   headers: {
    "Content-Type": "application/json",
@@ -68,7 +93,7 @@ export const logIn = async (data, error, callback) => {
 };
 
 export const verifyToken = async (error, callback) => {
- return await fetch("http://localhost:3000/api/user/verify", {
+ return await fetch(root + "/api/user/verify", {
   method: "GET",
   headers: {
    "Content-Type": "application/json",
@@ -85,7 +110,7 @@ export const verifyToken = async (error, callback) => {
    }
   })
   .catch((err) => {
-  console.log(localStorage.getItem("lxoxg"));
+   console.log(localStorage.getItem("lxoxg"));
    error(err);
   });
 };

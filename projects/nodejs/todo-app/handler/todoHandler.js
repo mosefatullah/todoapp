@@ -25,9 +25,9 @@ router.get("/", checkLogin, async (req, res) => {
 });
 
 // GET - get a todo by id
-router.get("/:id", async (req, res) => {
+router.get("/:id", checkLogin, async (req, res) => {
  try {
-  const data = await Todo.findById(req.params.id) || {};
+  const data = (await Todo.findById(req.params.id)) || {};
   res.status(200).json({
    message: "Todo was fetched successfully!",
    data,
@@ -40,8 +40,11 @@ router.get("/:id", async (req, res) => {
 });
 
 // POST - create a new todo
-router.post("/", async (req, res) => {
- const newTodo = new Todo(req.body);
+router.post("/", checkLogin, async (req, res) => {
+ const newTodo = new Todo({
+  user: req.userId,
+  ...req.body,
+ });
  try {
   const data = await newTodo.save();
   res.status(201).json({
@@ -56,9 +59,12 @@ router.post("/", async (req, res) => {
 });
 
 // POST - create multiple todos
-router.post("/bulk", async (req, res) => {
+router.post("/bulk", checkLogin, async (req, res) => {
  try {
-  const data = await Todo.insertMany(req.body);
+  const data = await Todo.insertMany({
+    user: req.userId,
+    ...req.body,
+  });
   res.status(201).json({
    message: "Todos were inserted successfully!",
    data,
@@ -71,7 +77,7 @@ router.post("/bulk", async (req, res) => {
 });
 
 // PUT - update a todo by id
-router.put("/:id", async (req, res) => {
+router.put("/:id", checkLogin, async (req, res) => {
  try {
   let updatedTodo = {
    updatedAt: Date.now(),
@@ -97,7 +103,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // DELETE - delete a todo by id
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", checkLogin, async (req, res) => {
  try {
   await Todo.deleteOne({ _id: req.params.id });
   res.status(200).json({

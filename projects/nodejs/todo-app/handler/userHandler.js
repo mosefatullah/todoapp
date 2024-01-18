@@ -102,7 +102,7 @@ router.post("/login", async (req, res) => {
      },
      process.env.JWT_SECRET,
      {
-      expiresIn: "1h",
+      expiresIn: "14d",
      }
     );
     res.status(200).json({
@@ -127,7 +127,7 @@ router.post("/login", async (req, res) => {
 });
 
 // PUT - update a user by id
-router.put("/:id", async (req, res) => {
+router.put("/:id", checkLogin, async (req, res) => {
  try {
   let updatedUser = {
    updatedAt: Date.now(),
@@ -153,7 +153,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // DELETE - delete a user by id
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", checkLogin, async (req, res) => {
  try {
   await User.deleteOne({ _id: req.params.id });
   res.status(200).json({
