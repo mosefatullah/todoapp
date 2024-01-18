@@ -27,7 +27,7 @@ function Home() {
      </div>
      <div className="flex justify-center max-w-3xl">
       <div
-       className="w-full mt-7 divide-y divide-gray-300 max-w-md space-y-4"
+       className="w-full mt-7 divide-y divide-gray-300 max-w-md space-y-4 mb-16"
        hidden={todos.length <= 0}
       >
        {todos.length > 0 &&
@@ -85,15 +85,14 @@ function Home() {
         ))}
       </div>
      </div>
-     <div
-      hidden={todos.length > 0}
-      className="flex flex-col justify-center items-center space-y-4 h-[calc(100vh-8rem)]"
-     >
-      <h1 className="text-gray-800 font-medium font-sans text-4xl">
-       Empty :-)
-      </h1>
-      <p className="text-gray-400 text-sm">No todos found!</p>
-     </div>
+     {todos.length <= 0 && (
+      <div className="flex flex-col justify-center items-center space-y-4 h-[calc(100vh-8rem)]">
+       <h1 className="text-gray-800 font-medium font-sans text-4xl">
+        Empty :-)
+       </h1>
+       <p className="text-gray-400 text-sm">No todos found!</p>
+      </div>
+     )}
     </div>
    </NavWithSidebar>
   </div>
