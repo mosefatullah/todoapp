@@ -67,6 +67,29 @@ export const deleteTodo = async (id, error, callback) => {
   });
 };
 
+export const changeTodoStatus = async (id, status, error, callback) => {
+ return await fetch(root + "/api/todo/status/" + id, {
+  method: "PUT",
+  headers: {
+   "Content-Type": "application/json",
+   "Access-Control-Allow-Origin": "*",
+   Authorization: `Bearer ${localStorage.getItem("lxoxg")}`,
+  },
+  body: JSON.stringify({ status }),
+ })
+  .then((res) => res.json())
+  .then((data) => {
+   if (data.error) {
+    error(data);
+   } else {
+    callback(data);
+   }
+  })
+  .catch((err) => {
+   error(err);
+  });
+};
+
 export const signUp = async (data, error, callback) => {
  return await fetch(root + "/api/user/signup", {
   method: "POST",
@@ -132,7 +155,6 @@ export const verifyToken = async (error, callback) => {
    }
   })
   .catch((err) => {
-   console.log(localStorage.getItem("lxoxg"));
    error(err);
   });
 };

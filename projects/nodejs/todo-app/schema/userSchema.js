@@ -14,28 +14,9 @@ const userSchema = mongoose.Schema({
    },
    {
     validator: function (v) {
-     return v.length > 3 && v.length < 20;
+     return v.length > 2 && v.length < 20;
     },
-    message: "Username must be longer than 3 and shorter than 20 characters!",
-   },
-  ],
- },
- password: {
-  type: String,
-  required: true,
-  validate: [
-   {
-    validator: function (v) {
-     return /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(v);
-    },
-    message:
-     "Password must be longer than 8 characters and contain at least 1 letter and 1 number!",
-   },
-   {
-    validator: function (v) {
-     return v.length > 8 && v.length < 20;
-    },
-    message: "Password must be longer than 8 and shorter than 20 characters!",
+    message: "Username must be longer than 2 and shorter than 20 characters!",
    },
   ],
  },
@@ -57,6 +38,10 @@ const userSchema = mongoose.Schema({
     message: "Email must be longer than 5 and shorter than 20 characters!",
    },
   ],
+ },
+ password: {
+  type: String,
+  required: true,
  },
  todos: [
   {

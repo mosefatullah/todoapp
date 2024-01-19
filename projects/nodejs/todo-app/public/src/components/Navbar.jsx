@@ -12,13 +12,13 @@ function Navbar({ toggleSidebar }) {
  }, []);
  return (
   <>
-   <nav className="bg-white border-b sticky top-0 left-0 z-50">
+   <nav className="nav bg-white border-b sticky top-0 left-0 z-50">
     <div className="mx-auto px-2 sm:px-6 lg:px-8">
      <div className="relative flex h-16 items-center justify-between space-x-1 sm:space-x-2 md:space-x-4">
       <button
        type="button"
        className={
-        "rounded-full relative inline-flex items-center justify-center p-3 text-gray-500 hover:bg-gray-200 hover:text-gray-600 " +
+        "hideWhenToolbarShowed rounded-full relative inline-flex items-center justify-center p-3 text-gray-500 hover:bg-gray-200 hover:text-gray-600 " +
         (toggleSidebar == null ? "hidden" : "block")
        }
        onClick={() => {
@@ -58,7 +58,7 @@ function Navbar({ toggleSidebar }) {
         />
        </svg>
       </button>
-      <div className="flex flex-1 items-stretch justify-start">
+      <div className="hideWhenToolbarShowed flex flex-1 items-stretch justify-start">
        <div className="flex flex-shrink-0 items-center">
         <img className="h-8 w-auto" src={Logo} alt="Todo App" />
        </div>

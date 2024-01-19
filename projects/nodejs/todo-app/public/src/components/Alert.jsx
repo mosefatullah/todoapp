@@ -25,7 +25,7 @@ function Alert({
  };
  return (
   <div
-   className="relative z-[100]"
+   className="relative z-[200]"
    style={{ display: openAlert ? "block" : "none" }}
   >
    <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
