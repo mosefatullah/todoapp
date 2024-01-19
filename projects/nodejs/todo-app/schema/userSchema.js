@@ -5,25 +5,58 @@ const userSchema = mongoose.Schema({
   type: String,
   required: true,
   unique: true,
-  minlength: 3,
-  maxlength: 20,
+  validate: [
+   {
+    validator: function (v) {
+     return /^[a-zA-Z0-9_-]+$/.test(v);
+    },
+    message: "Username should only contain alphanumeric, underscore, and dash!",
+   },
+   {
+    validator: function (v) {
+     return v.length > 3 && v.length < 20;
+    },
+    message: "Username must be longer than 3 and shorter than 20 characters!",
+   },
+  ],
  },
  password: {
   type: String,
   required: true,
-  minlength: 6,
-  maxlength: 20,
+  validate: [
+   {
+    validator: function (v) {
+     return /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(v);
+    },
+    message:
+     "Password must be longer than 8 characters and contain at least 1 letter and 1 number!",
+   },
+   {
+    validator: function (v) {
+     return v.length > 8 && v.length < 20;
+    },
+    message: "Password must be longer than 8 and shorter than 20 characters!",
+   },
+  ],
  },
  email: {
   type: String,
   required: true,
   unique: true,
-  maxlength: 50,
-  validate: {
-   validator: function (v) {
-    return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(v);
+  validate: [
+   {
+    validator: function (v) {
+     return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(v);
+    },
+    message: "Email is not valid!",
    },
-  },
+   {
+    validator: function (v) {
+     return v.length > 5 && v.length < 20;
+    },
+    message: "Email must be longer than 5 and shorter than 20 characters!",
+   },
+  ],
  },
  todos: [
   {
