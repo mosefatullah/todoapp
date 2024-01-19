@@ -14,7 +14,7 @@ app.use(cors());
 
 // database connection
 mongoose
- .connect("mongodb://localhost:27017/todo")
+ .connect()
  .then(() => console.log("Connected to database"))
  .catch((err) => console.log(err));
 
