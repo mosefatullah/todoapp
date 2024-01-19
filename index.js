@@ -10,7 +10,10 @@ const app = express();
 app.use(express.static("public/dist"));
 app.use(express.json());
 dotenv.config();
-app.use(cors());
+app.use(cors({
+    origin: "*",
+    methods: "GET,PUT,POST,DELETE"
+}));
 
 // database connection
 mongoose
