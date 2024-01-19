@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 dotenv.config();
 app.use(cors({
-    origin: "https://gtodo.vercel.app/",
+    origin: "https://gtodo.vercel.app",
     methods: "GET,PUT,POST,DELETE"
 }));
 
