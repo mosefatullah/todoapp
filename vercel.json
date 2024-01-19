@@ -1,7 +1,7 @@
 {
     "rewrites": [
         {
-            "source": "index.vercel.js",
+            "source": "/api/(.*)",
             "destination": "/api"
         }
     ]

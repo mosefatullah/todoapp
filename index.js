@@ -10,14 +10,16 @@ const app = express();
 app.use(express.static("public/dist"));
 app.use(express.json());
 dotenv.config();
-app.use(cors({
-    origin: "*",
-    methods: "GET,PUT,POST,DELETE"
-}));
+app.use(
+ cors({
+  origin: "*",
+  methods: "GET,PUT,POST,DELETE",
+ })
+);
 
 // database connection
 mongoose
- .connect()
+ .connect(process.env.MONGODB_URI)
  .then(() => console.log("Connected to database"))
  .catch((err) => console.log(err));
 
@@ -38,5 +40,3 @@ app.use((err, req, res, next) => {
 app.listen(3000, () => {
  console.log("Listening on port 3000");
 });
-
-export default app;
