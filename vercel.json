@@ -1,8 +1,13 @@
 {
-    "rewrites": [
-        {
-            "source": "/",
-            "destination": "/index.js"
-        }
+    "version": 2,
+    "builds": [
+      { "src": "public", "use": "@vercel/static-build" },
+      { "src": "index.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/api/(.*)", "dest": "index.js" },
+      { "src": "/(.*)", "dest": "public/$1" }
     ]
-}
+  }
+  
