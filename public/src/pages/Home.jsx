@@ -2,7 +2,8 @@ import React from "react";
 import NavWithSidebar from "../components/NavWithSidebar";
 import { getTodos, addTodo, deleteTodo, changeTodoStatus } from "../utils/api";
 import Alert from "../components/Alert";
-import TodoModal from "./../components/Todomodal";
+import TodoModal from "../components/TodoModal";
+import FormatDescription from "../components/format";
 
 function Home() {
  const [todos, setTodos] = React.useState([]);
@@ -25,26 +26,33 @@ function Home() {
     setTodos(data.data);
    }
   );
-  window.addEventListener("scroll", () => {
-   if (window.innerWidth >= 1000) return;
-   if (window.scrollY >= 100) {
-    document
-     .querySelector(".nav")
-     .querySelectorAll(".hideWhenToolbarShowed")[0].style.visibility = "hidden";
-    document
-     .querySelector(".nav")
-     .querySelectorAll(".hideWhenToolbarShowed")[1].style.visibility = "hidden";
-   } else {
-    document
-     .querySelector(".nav")
-     .querySelectorAll(".hideWhenToolbarShowed")[0].style.visibility = "";
-    document
-     .querySelector(".nav")
-     .querySelectorAll(".hideWhenToolbarShowed")[1].style.visibility = "";
-   }
-  });
   return () => {};
  }, [todos, todos.length]);
+
+ React.useEffect(() => {
+  if (window.location.hash && !window.location.hash.includes("home")) {
+   let tid = window.location.hash.replace("#", "");
+   getTodos(
+    () => {
+     setTodos([]);
+    },
+    (data) => {
+     setTodos(data.data);
+     let todo = data.data.filter((todo) => todo._id === tid)[0];
+     if (todo) {
+      openTheTodo(todo);
+     } else {
+      setAlert({
+       title: "Error",
+       description: "Todo not found!",
+       open: true,
+      });
+     }
+    }
+   );
+  }
+  return () => {};
+ }, [window.location.hash]);
 
  /** ALL FUNCTIONS **/
  const updateSelectedNum = () => {
@@ -264,6 +272,7 @@ function Home() {
   document.getElementById("markAsUndone").style.display = "none";
   updateSelectedNum();
  };
+
  return (
   <div>
    <Alert
@@ -290,6 +299,7 @@ function Home() {
     }
     cancelAction={(s) => {
      setTodoModal({ ...todoModal, open: s });
+     window.location.hash = "home";
     }}
    />
    <NavWithSidebar>
@@ -356,7 +366,7 @@ function Home() {
        </div>
       </div>
      </div>
-     <div className="todoTool sticky top-[4px] z-[100] max-w-3xl overflow-x-scroll">
+     <div className="todoTool max-w-3xl overflow-x-scroll">
       <div className="flex space-x-2 justify-between items-center px-4 py-4 border-b bg-white border-gray-300 max-w-lg mx-auto whitespace-nowrap">
        <div>
         <span className="text-gray-500 text-sm ml-auto">
@@ -510,7 +520,7 @@ function Home() {
               {todo.title || "Untitled"}
              </h1>
              <p className="text-gray-500 cursor-pointer text-sm line-clamp-2">
-              {todo.description || "No description"}
+              <FormatDescription>{todo.description || "No description"}</FormatDescription>
              </p>
              <span className="flex items-center text-gray-500 cursor-pointer text-sm">
               <svg

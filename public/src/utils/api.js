@@ -1,4 +1,4 @@
-const root = "";
+const root = "http://localhost:3000";
 
 export const getTodos = async (error, callback) => {
  return await fetch(root + "/api/todo", {
@@ -53,6 +53,29 @@ export const deleteTodo = async (id, error, callback) => {
    "Access-Control-Allow-Origin": "*",
    Authorization: `Bearer ${localStorage.getItem("lxoxg")}`,
   },
+ })
+  .then((res) => res.json())
+  .then((data) => {
+   if (data.error) {
+    error(data);
+   } else {
+    callback(data);
+   }
+  })
+  .catch((err) => {
+   error(err);
+  });
+};
+
+export const updateTodo = async (id, data, error, callback) => {
+ return await fetch(root + "/api/todo/" + id, {
+  method: "PUT",
+  headers: {
+   "Content-Type": "application/json",
+   "Access-Control-Allow-Origin": "*",
+   Authorization: `Bearer ${localStorage.getItem("lxoxg")}`,
+  },
+  body: JSON.stringify(data),
  })
   .then((res) => res.json())
   .then((data) => {

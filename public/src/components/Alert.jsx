@@ -36,7 +36,7 @@ function Alert({
       display: openAlert ? "block" : "none"
      }}
     >
-     <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+     <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg min-w-[300px]"
      style={{
       marginLeft: "50%",
       transform: "translate(-50%, 0)",

@@ -211,17 +211,18 @@ function Login() {
             password: document.querySelector("#signup-password").value,
            },
            (err) => {
-            console.log(err)
             let error = err.error;
-            if (error.includes("User validation failed: ")) {
+            if (error?.includes("User validation failed: ")) {
              error = error.split("User validation failed: ")[1];
              error = error.replace(/(\w+: )+/g, "");
              error = error.toLowerCase();
              error = error.charAt(0).toUpperCase() + error.slice(1);
+            } else if (error?.includes("duplicate")) {
+             error = "Username already exists!";
             }
             setAlert({
              title: "Error",
-             description: error || "Something went wrong",
+             description: error || "Something went wrong!",
              open: true,
             });
            },

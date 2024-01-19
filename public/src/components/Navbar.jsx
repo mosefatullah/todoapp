@@ -140,7 +140,7 @@ function Navbar({ toggleSidebar }) {
         </div>
 
         <div
-         className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+         className="absolute right-0 z-[200] mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
          role="menu"
          tabIndex="-1"
          hidden={openUserMenu}
@@ -168,7 +168,7 @@ function Navbar({ toggleSidebar }) {
           className="block px-4 py-2 text-sm text-gray-700"
           onClick={() => {
            localStorage.removeItem("lxoxg");
-           window.location.href = "/login";
+           window.location.href = "/";
           }}
          >
           Log out
