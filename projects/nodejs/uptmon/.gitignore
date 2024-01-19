@@ -1,5 +1,0 @@
-node_modules/
-.data/users/*.json
-.data/checks/*.json
-.data/logs/*.log
-.data/tokens/*.json
