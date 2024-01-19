@@ -2,24 +2,13 @@
     "version": 2,
     "builds": [
         {
-            "src": "public/dist/package.json",
-            "use": "@vercel/static-build"
-        },
-        {
             "src": "*.js",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
-            "handle": "filesystem"
-        },
-        {
             "src": "/(.*)",
-            "dest": "v0/"
-        },
-        {
-            "src": "public/(.*)",
             "dest": "/"
         }
     ]
