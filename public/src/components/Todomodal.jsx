@@ -81,7 +81,12 @@ function TodoModal({ data, open, cancelAction, changeTodoStatus }) {
            onClick={() => {
             document.querySelector(".todoBase p").contentEditable = true;
             setTodoDescription(
-             data.description || "No description"
+             data.description.split("\n").map((line, index, arr) => (
+              <React.Fragment key={index}>
+               {line}
+               {index !== arr.length - 1 && <br />}
+              </React.Fragment>
+             )) || "No description"
             );
             document.querySelector(".todoBase h3").contentEditable = true;
             document.querySelector(".todoBase h3").innerText = data.title;

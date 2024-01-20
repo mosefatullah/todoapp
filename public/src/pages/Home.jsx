@@ -3,7 +3,7 @@ import NavWithSidebar from "../components/NavWithSidebar";
 import { getTodos, addTodo, deleteTodo, changeTodoStatus } from "../utils/api";
 import Alert from "../components/Alert";
 import TodoModal from "../components/TodoModal";
-import FormatDescription from "../components/format";
+import FormatDescription from "../components/Format";
 
 function Home() {
  const [todos, setTodos] = React.useState([]);
@@ -73,11 +73,11 @@ function Home() {
   addTodo(
    {
     title: document.querySelectorAll("#takeATodo2 input")[0].value,
-    description: document.querySelectorAll("#takeATodo2 input")[1].value,
+    description: document.querySelectorAll("#takeATodo2 textarea")[0].value,
    },
    (err) => {
     let error = err.error;
-    if (error.includes("Todo validation failed: ")) {
+    if (error?.includes("Todo validation failed: ")) {
      error = error.split("Todo validation failed: ")[1];
      error = error.replace(/(\w+: )+/g, "");
     }
@@ -233,7 +233,7 @@ function Home() {
   } else {
    setAlert({
     title:
-     "Mark Todo(s) as " + status.charAt(0).toUpperCase() + status.slice(1),
+     "Mark as " + status.charAt(0).toUpperCase() + status.slice(1),
     description:
      "Are you sure you want to mark the selected todo(s) as " + status + "?",
     open: true,
@@ -247,7 +247,7 @@ function Home() {
        (err) => {
         setAlert({
          title: "Error",
-         description: err.error || "Failed to mark todo as " + status + "!",
+         description: err.error || "Failed to mark as " + status + "!",
          open: true,
         });
        },
@@ -322,10 +322,10 @@ function Home() {
         className="w-full outline-none placeholder-slate-500"
         placeholder="Title"
        />
-       <input
-        type="text"
-        className="w-full outline-none text-sm mt-5"
+       <textarea
+        className="w-full text-sm mt-5"
         placeholder="Description ..."
+        rows="3"
        />
        <div className="flex justify-between items-center mt-5">
         <div className="flex items-center space-x-2">
@@ -520,7 +520,9 @@ function Home() {
               {todo.title || "Untitled"}
              </h1>
              <p className="text-gray-500 cursor-pointer text-sm line-clamp-2">
-              <FormatDescription>{todo.description || "No description"}</FormatDescription>
+              <FormatDescription>
+               {todo.description || "No description"}
+              </FormatDescription>
              </p>
              <span className="flex items-center text-gray-500 cursor-pointer text-sm">
               <svg

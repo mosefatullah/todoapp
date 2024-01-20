@@ -6,9 +6,9 @@ const todoSchema = mongoose.Schema({
   required: true,
   validate: {
    validator: (value) => {
-    return value.length > 5 && value.length < 50;
+    return value.length > 3 && value.length < 50;
    },
-   message: "Title must be longer than 5 and shorter than 50 characters!",
+   message: "Title must be longer than 3 and shorter than 50 characters!",
   },
  },
  description: {

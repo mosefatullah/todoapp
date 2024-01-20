@@ -85,7 +85,7 @@ function Login() {
           },
           (err) => {
            let error = err.error;
-           if (error.includes("User validation failed: ")) {
+           if (error?.includes("User validation failed: ")) {
             error = error.split("User validation failed: ")[1];
             error = error.replace(/(\w+: )+/g, "");
            }
