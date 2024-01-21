@@ -6,7 +6,7 @@ import TodoModal from "../components/TodoModal";
 import FormatDescription from "../components/Format";
 
 function Home() {
- const [todos, setTodos] = React.useState([]);
+ const [todos, setTodos] = React.useState(null);
  const [alert, setAlert] = React.useState({
   title: "",
   description: "",
@@ -502,7 +502,8 @@ function Home() {
        className="w-full mt-7 divide-y divide-gray-300 max-w-lg space-y-4 mb-16"
        hidden={todos.length <= 0}
       >
-       {todos.length > 0 &&
+       {todos &&
+        todos.length > 0 &&
         todos.map((todo) => (
          <div
           className="todo p-4 flex justify-between items-center cursor-pointer hover:shadow-md transition duration-200 ease-in-out active:bg-blue-50 active:transition-none active:shadow-none select-none"
@@ -585,12 +586,21 @@ function Home() {
         ))}
       </div>
      </div>
-     {todos.length <= 0 && (
+     {todos ? (
+      todos.length <= 0 && (
+       <div className="flex flex-col justify-center items-center space-y-4 h-[calc(100vh-8rem)]">
+        <h1 className="text-gray-800 font-medium font-sans text-4xl">
+         Empty :-)
+        </h1>
+        <p className="text-gray-400 text-sm">No todos found!</p>
+       </div>
+      )
+     ) : (
       <div className="flex flex-col justify-center items-center space-y-4 h-[calc(100vh-8rem)]">
        <h1 className="text-gray-800 font-medium font-sans text-4xl">
-        Empty :-)
+        Loading...
        </h1>
-       <p className="text-gray-400 text-sm">No todos found!</p>
+       <p className="text-gray-400 text-sm">Please wait...</p>
       </div>
      )}
     </div>
