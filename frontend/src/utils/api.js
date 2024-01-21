@@ -1,5 +1,4 @@
-//const root = "https://gtodoapi.vercel.app";
-const root = "http://localhost:3000";
+const root = "https://gtodoapi.vercel.app";
 
 export const getTodos = async (error, callback) => {
  return await fetch(root + "/api/todo", {
