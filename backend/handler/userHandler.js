@@ -23,7 +23,7 @@ router.get("/verify", checkLogin, async (req, res) => {
 });
 
 // GET - get all users
-router.get("/", async (req, res) => {
+router.get("/", checkLogin, async (req, res) => {
  try {
   const data = await User.find()
    .limit(parseInt(req.body.endAt))
@@ -41,7 +41,7 @@ router.get("/", async (req, res) => {
 });
 
 // GET - get a user by id
-router.get("/:username", async (req, res) => {
+router.get("/:username", checkLogin, async (req, res) => {
  try {
   const data =
    (await User.findOne({ username: req.params.username }).select(
