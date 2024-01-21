@@ -7,7 +7,7 @@ const cors = require("cors");
 
 // express app initialization
 const app = express();
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV === "development") {
  app.use(express.static("../frontend/dist"));
 }
 app.use(express.json());
