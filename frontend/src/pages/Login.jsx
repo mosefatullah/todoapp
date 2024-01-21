@@ -91,7 +91,7 @@ function Login() {
            }
            setAlert({
             title: "Error",
-            description: error || "Something went wrong",
+            description: error || err || "Something went wrong",
             open: true,
            });
           },

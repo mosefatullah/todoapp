@@ -83,7 +83,7 @@ function Home() {
     }
     setAlert({
      title: "Error",
-     description: error || "Failed to add todo!",
+     description: error || err || "Failed to add todo!",
      open: true,
     });
    },
