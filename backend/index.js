@@ -7,17 +7,21 @@ const cors = require("cors");
 
 // express app initialization
 const app = express();
+app.use(express.json());
+
 if (process.env.NODE_ENV === "development") {
  app.use(express.static("../frontend/dist"));
 }
-app.use(express.json());
-dotenv.config();
+
 app.use(
  cors({
-  origin: "*",
+  origin:
+   process.env.NODE_ENV === "development" ? "*" : "https://gtodo.vercel.app/",
   methods: "GET,PUT,POST,DELETE",
  })
 );
+
+dotenv.config();
 
 // database connection
 mongoose
