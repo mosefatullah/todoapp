@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
    .select("-password");
   res.status(200).json({
    message: "Users were fetched successfully!",
-   data,
+   data: data || [],
   });
  } catch (err) {
   res.status(500).json({
