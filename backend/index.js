@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "development") {
 app.use(
  cors({
   origin:
-   process.env.NODE_ENV === "development" ? "*" : "https://gtodo.vercel.app/",
+   process.env.NODE_ENV === "development" ? "*" : "https://gtodo.vercel.app",
   methods: "GET,PUT,POST,DELETE",
  })
 );
