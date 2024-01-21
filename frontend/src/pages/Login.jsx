@@ -85,7 +85,7 @@ function Login() {
           },
           (err) => {
            let error = err.error;
-           if (error?.includes("User validation failed: ")) {
+           if (error && error.includes("User validation failed: ")) {
             error = error.split("User validation failed: ")[1];
             error = error.replace(/(\w+: )+/g, "");
            }
@@ -212,12 +212,12 @@ function Login() {
            },
            (err) => {
             let error = err.error;
-            if (error?.includes("User validation failed: ")) {
+            if (error && error.includes("User validation failed: ")) {
              error = error.split("User validation failed: ")[1];
              error = error.replace(/(\w+: )+/g, "");
              error = error.toLowerCase();
              error = error.charAt(0).toUpperCase() + error.slice(1);
-            } else if (error?.includes("duplicate")) {
+            } else if (error && error.includes("duplicate")) {
              error = "Username already exists!";
             }
             setAlert({

@@ -77,7 +77,7 @@ function Home() {
    },
    (err) => {
     let error = err.error;
-    if (error?.includes("Todo validation failed: ")) {
+    if (error && error.includes("Todo validation failed: ")) {
      error = error.split("Todo validation failed: ")[1];
      error = error.replace(/(\w+: )+/g, "");
     }
