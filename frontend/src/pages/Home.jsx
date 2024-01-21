@@ -27,29 +27,22 @@ function Home() {
    }
   );
   return () => {};
- }, [todos, todos.length]);
+ }, [Array.isArray(todos), Array.isArray(todos) && todos.length]);
 
  React.useEffect(() => {
   if (window.location.hash && !window.location.hash.includes("home")) {
    let tid = window.location.hash.replace("#", "");
-   getTodos(
-    () => {
-     setTodos([]);
-    },
-    (data) => {
-     setTodos(data.data);
-     let todo = data.data.filter((todo) => todo._id === tid)[0];
-     if (todo) {
-      openTheTodo(todo);
-     } else {
-      setAlert({
-       title: "Error",
-       description: "Todo not found!",
-       open: true,
-      });
-     }
-    }
-   );
+   if (!Array.isArray(todos)) return;
+   let todo = todos.filter((todo) => todo._id === tid)[0];
+   if (todo) {
+    openTheTodo(todo);
+   } else {
+    setAlert({
+     title: "Error",
+     description: "Todo not found!",
+     open: true,
+    });
+   }
   }
   return () => {};
  }, [window.location.hash]);
@@ -90,7 +83,7 @@ function Home() {
    () => {
     setTodos([]);
     document.querySelectorAll("#takeATodo2 input")[0].value = "";
-    document.querySelectorAll("#takeATodo2 input")[1].value = "";
+    document.querySelectorAll("#takeATodo2 textarea")[0].value = "";
     document.getElementById("takeATodo1").style.display = "";
     document.getElementById("takeATodo2").style.display = "none";
    }
@@ -500,9 +493,9 @@ function Home() {
      <div className="flex justify-center max-w-3xl">
       <div
        className="w-full mt-7 divide-y divide-gray-300 max-w-lg space-y-4 mb-16"
-       hidden={todos.length <= 0}
+       hidden={!Array.isArray(todos) || todos.length <= 0}
       >
-       {todos &&
+       {Array.isArray(todos) &&
         todos.length > 0 &&
         todos.map((todo) => (
          <div
@@ -586,7 +579,7 @@ function Home() {
         ))}
       </div>
      </div>
-     {todos ? (
+     {Array.isArray(todos) ? (
       todos.length <= 0 && (
        <div className="flex flex-col justify-center items-center space-y-4 h-[calc(100vh-8rem)]">
         <h1 className="text-gray-800 font-medium font-sans text-4xl">
@@ -597,10 +590,8 @@ function Home() {
       )
      ) : (
       <div className="flex flex-col justify-center items-center space-y-4 h-[calc(100vh-8rem)]">
-       <h1 className="text-gray-800 font-medium font-sans text-4xl">
-        Loading...
-       </h1>
-       <p className="text-gray-400 text-sm">Please wait...</p>
+       <h1 className="text-gray-800 font-medium font-sans text-4xl">Loading</h1>
+       <p className="text-gray-400 text-sm">Please Wait</p>
       </div>
      )}
     </div>

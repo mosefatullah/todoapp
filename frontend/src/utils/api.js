@@ -1,4 +1,5 @@
-const root = "https://gtodoapi.vercel.app";
+//const root = "https://gtodoapi.vercel.app";
+const root = "http://localhost:3000";
 
 export const getTodos = async (error, callback) => {
  return await fetch(root + "/api/todo", {
@@ -18,7 +19,9 @@ export const getTodos = async (error, callback) => {
    }
   })
   .catch((err) => {
-   error(err);
+   error({
+    error: err.message,
+   });
   });
 };
 
@@ -41,7 +44,9 @@ export const addTodo = async (data, error, callback) => {
    }
   })
   .catch((err) => {
-   error(err);
+   error({
+    error: err.message,
+   });
   });
 };
 
@@ -63,7 +68,9 @@ export const deleteTodo = async (id, error, callback) => {
    }
   })
   .catch((err) => {
-   error(err);
+   error({
+    error: err.message,
+   });
   });
 };
 
@@ -86,7 +93,9 @@ export const updateTodo = async (id, data, error, callback) => {
    }
   })
   .catch((err) => {
-   error(err);
+   error({
+    error: err.message,
+   });
   });
 };
 
@@ -109,7 +118,9 @@ export const changeTodoStatus = async (id, status, error, callback) => {
    }
   })
   .catch((err) => {
-   error(err);
+   error({
+    error: err.message,
+   });
   });
 };
 
@@ -132,7 +143,9 @@ export const signUp = async (data, error, callback) => {
    }
   })
   .catch((err) => {
-   error(err);
+   error({
+    error: err.message,
+   });
   });
 };
 
@@ -156,7 +169,9 @@ export const logIn = async (data, error, callback) => {
    }
   })
   .catch((err) => {
-   error(err);
+   error({
+    error: err.message,
+   });
   });
 };
 
@@ -178,6 +193,8 @@ export const verifyToken = async (error, callback) => {
    }
   })
   .catch((err) => {
-   error(err);
+   error({
+    error: err.message,
+   });
   });
 };
