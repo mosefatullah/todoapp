@@ -33,9 +33,9 @@ const userSchema = mongoose.Schema({
    },
    {
     validator: function (v) {
-     return v.length > 5 && v.length < 20;
+     return v.length > 5 && v.length < 50;
     },
-    message: "Email must be longer than 5 and shorter than 20 characters!",
+    message: "Email must be longer than 5 and shorter than 50 characters!",
    },
   ],
  },
