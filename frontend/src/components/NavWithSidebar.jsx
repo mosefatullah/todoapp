@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 
 function NavWithSidebar({ children }) {
- const [expandSidebar, setExpandSidebar] = React.useState(false);
+ const [expandSidebar, setExpandSidebar] = React.useState(true);
  function toggleSidebar(state) {
   setExpandSidebar(state);
  }
